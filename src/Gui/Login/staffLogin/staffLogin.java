@@ -70,4 +70,5 @@ public class staffLogin extends JFrame {
 		btnNewButton.setBounds(160, 156, 85, 21);
 		contentPane.add(btnNewButton);
 	}
+//	comment test
 }
