@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="make it better">
-      <change afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Main/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/gui.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/register/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/register/gui.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="Added GUI panels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Login/gui.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/gui.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Login/staffLogin/staffLogin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/staffLogin.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +91,7 @@
       <workItem from="1682570316988" duration="2036000" />
       <workItem from="1682701465637" duration="143000" />
       <workItem from="1682754000911" duration="1507000" />
-      <workItem from="1682755519694" duration="7528000" />
+      <workItem from="1682755519694" duration="8327000" />
     </task>
     <task id="LOCAL-00001" summary="make it better">
       <created>1682701518613</created>
@@ -135,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682701573438</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added GUI panels">
+      <created>1682764635425</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682764635425</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +139,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -155,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="make it better" />
-    <option name="LAST_COMMIT_MESSAGE" value="make it better" />
+    <MESSAGE value="Added GUI panels" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GUI panels" />
   </component>
 </project>
