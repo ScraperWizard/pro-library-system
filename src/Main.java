@@ -13,6 +13,7 @@ public class Main {
 		Login loginFrame = new Login();
 		loginFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		loginFrame.setVisible(true);
+//		Comment trial
 		
 	}
 }
