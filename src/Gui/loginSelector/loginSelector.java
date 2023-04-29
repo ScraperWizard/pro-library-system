@@ -43,14 +43,12 @@ public class loginSelector {
         // Staff login button
         JButton staffLoginButton = new JButton("Staff");
         staffLoginButton.setForeground(new Color(255, 0, 0));
-        staffLoginButton.setBackground(new Color(255, 0, 0));
         staffLoginButton.setBounds(screenHeight + 150, screenWidth - 550, 300, 100);
         contentPane.add(staffLoginButton);
 
         // Customer login button
         JButton customerLoginButton = new JButton("Customer");
         customerLoginButton.setForeground(new Color(0, 15, 255));
-        customerLoginButton.setBackground(new Color(0, 28, 255));
         customerLoginButton.setBounds(screenHeight + 150, screenWidth - 350, 300, 100);
         contentPane.add(customerLoginButton);
 

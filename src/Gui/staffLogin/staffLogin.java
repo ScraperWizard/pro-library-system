@@ -49,7 +49,6 @@ public class staffLogin {
         // Staff login button
         JButton staffLoginButton = new JButton("Login");
         staffLoginButton.setForeground(new Color(0, 52, 255));
-        staffLoginButton.setBackground(new Color(0, 22, 255));
         staffLoginButton.setBounds(screenHeight + 150, screenWidth - 350, 300, 100);
         contentPane.add(staffLoginButton);
         staffLoginButton.addActionListener(new ActionListener() {
@@ -64,7 +63,6 @@ public class staffLogin {
         // Staff login button
         JButton returnButton = new JButton("<- Return");
         returnButton.setForeground(new Color(255, 0, 0));
-        returnButton.setBackground(new Color(255, 0, 0));
         returnButton.setBounds(5, 5, 100, 40);
         contentPane.add(returnButton);
         returnButton.addActionListener(new ActionListener() {

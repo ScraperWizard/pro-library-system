@@ -28,7 +28,6 @@ public class Register {
 
 		JButton returnButton = new JButton("<- Return");
 		returnButton.setForeground(new Color(255, 0, 0));
-		returnButton.setBackground(new Color(255, 0, 0));
 		returnButton.setBounds(5, 5, 100, 40);
 		contentPane.add(returnButton);
 		returnButton.addActionListener(new ActionListener() {

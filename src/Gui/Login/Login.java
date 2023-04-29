@@ -65,14 +65,12 @@ public class Login {
 		// Register form
 		JButton registerButton = new JButton("Register");
 		registerButton.setForeground(new Color(0, 255, 124));
-		registerButton.setBackground(new Color(0, 255, 124));
 		registerButton.setBounds(screenHeight + 250, screenWidth - 200, 100, 40);
 		contentPane.add(registerButton);
 
 		// Login button
 		JButton customerLoginButton = new JButton("Login");
 		customerLoginButton.setForeground(new Color(0, 52, 255));
-		customerLoginButton.setBackground(new Color(0, 22, 255));
 		customerLoginButton.setBounds(screenHeight + 150, screenWidth - 350, 300, 100);
 		contentPane.add(customerLoginButton);
 		customerLoginButton.addActionListener(clickEvent -> {
@@ -103,7 +101,6 @@ public class Login {
 
 		JButton returnButton = new JButton("<- Return");
 		returnButton.setForeground(new Color(255, 0, 0));
-		returnButton.setBackground(new Color(255, 0, 0));
 		returnButton.setBounds(5, 5, 100, 40);
 		contentPane.add(returnButton);
 		returnButton.addActionListener(new ActionListener() {
