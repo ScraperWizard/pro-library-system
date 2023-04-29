@@ -1,6 +1,7 @@
 import Database.*;
+ 
 import Database.Users.User;
-import GUI.Login.*;
+import Gui.Login.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -12,5 +13,6 @@ public class Main {
 		Login loginFrame = new Login();
 		loginFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		loginFrame.setVisible(true);
+		
 	}
 }
