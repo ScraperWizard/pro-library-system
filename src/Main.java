@@ -1,19 +1,21 @@
-import Database.*;
- 
-import Database.Users.User;
-import Gui.Login.*;
+//import Gui.*;
+import Gui.Main.MainFrame;
+import Gui.loginSelector.loginSelector;
+
 import java.awt.*;
-import javax.swing.*;
-import javax.swing.border.*;
-import java.awt.Window.*;
 
 public class Main {
 	public static void main(String[] args) {
-		// Start up GUI, prompt to login
-		Login loginFrame = new Login();
-		loginFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		loginFrame.setVisible(true);
-//		Comment trial
-		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrame mainFrame = new MainFrame();
+					loginSelector loginSelectorFrame = new loginSelector(mainFrame.jFrame);
+					mainFrame.jFrame.setContentPane(loginSelectorFrame.contentPane);
+				} catch (Exception error) {
+					error.printStackTrace();
+				}
+			}
+		});
 	}
 }

@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="make it better" />
+    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="make it better">
+      <change afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Main/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/gui.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/register/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/register/gui.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Login/gui.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/gui.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Login/staffLogin/staffLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/staffLogin.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,18 +51,25 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="19" />
+  </component>
   <component name="ProjectId" id="2OzjTj4LDkUnHCT74Zpo55Bbwqv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/abdulrahmananas/Desktop/School/Computer/Java/Library-System-OOP",
+    "last_opened_file_path": "/Users/abdulrahmananas/Desktop/School/Computer/Java/Library-System-OOP/pro-library-system/src/Gui/register",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +81,19 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Gui/register" />
+      <recent name="$PROJECT_DIR$/src/Gui" />
+      <recent name="$PROJECT_DIR$/src/Gui/loginSelector" />
+      <recent name="$PROJECT_DIR$/src/Gui/Login/staffLogin" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Gui/Login" />
+      <recent name="$PROJECT_DIR$/src/Gui/Login/staffLogin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,6 +104,8 @@
       <updated>1682570314740</updated>
       <workItem from="1682570316988" duration="2036000" />
       <workItem from="1682701465637" duration="143000" />
+      <workItem from="1682754000911" duration="1507000" />
+      <workItem from="1682755519694" duration="7528000" />
     </task>
     <task id="LOCAL-00001" summary="make it better">
       <created>1682701518613</created>
@@ -115,6 +153,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="make it better" />
     <option name="LAST_COMMIT_MESSAGE" value="make it better" />
   </component>
