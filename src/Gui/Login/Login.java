@@ -1,4 +1,4 @@
-package GUI.Login;
+package Gui.Login;
 
 import java.awt.*;
 import javax.swing.*;
