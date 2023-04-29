@@ -1,4 +1,4 @@
-package GUI.Login;
+package Gui.Login;
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,7 +13,12 @@ public class Login extends JFrame {
 	private JPasswordField passwordField;
 
 	public Login() {
+		// Database object
 		User globalUserObject = new User();
+		Staff globalStaffObject = new Staff();
+		Books globalBooksObject = new Books();
+		
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				"C:\\Users\\user\\OneDrive\\Pictures\\132-1324648_sergio-ramos-is-an-aura-real-madrid-cannot (1).jpg"));
 		setType(Type.POPUP);
@@ -72,7 +77,7 @@ public class Login extends JFrame {
 			boolean validLogin = false;
 
 			// Validate the login
-			if (globalUserObject.validateLogin(username, password)) {
+			if (globalUserObject.validateLogin(username, password)) { // returns a boolean, if true valid, if false invalid
 				validLogin = true;
 			} else {
 				// Password error display
