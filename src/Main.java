@@ -1,6 +1,6 @@
 import Database.*;
 import Database.Users.User;
-import GUI.Login.*;
+import Gui.Login.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
