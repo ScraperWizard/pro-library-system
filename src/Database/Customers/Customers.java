@@ -1,28 +1,25 @@
-package Database.Users;
+package Database.Customers;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 import org.json.simple.*;
 import org.json.simple.parser.*;
-import jakarta.json.JsonArray;
 
-public class User {
-    final String filePath = "src/Database/Users/Users.json";
+public class Customers {
+    final String filePath = "src/Database/Customers/Customers.json";
     public String username;
     public String password;
     public String email;
     public String age;
 
-    public User(String username, String password, String email, String age) {
+    public Customers(String username, String password, String email, String age) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.age = age;
     }
 
-    public User() {
+    public Customers() {
 
     }
 
@@ -167,8 +164,8 @@ public class User {
         return result;
     }
 
-    public User[] getAllUsers() {
-        User[] userArray;
+    public Customers[] getAllUsers() {
+        Customers[] customersArray;
 
         // Decleration
         JSONArray userData = null;
@@ -182,26 +179,26 @@ public class User {
         }
 
         // Assign userArray with correct size
-        userArray = new User[userData.size()];
+        customersArray = new Customers[userData.size()];
         int counter = 0;
 
         // Loop over all elements of the object,
         // and search for username object
         for (Object obj : userData) {
             JSONObject tempObject = (JSONObject) obj;
-            User tempUser = new User();
-            tempUser.username = (String) tempObject.get("username");
-            tempUser.password = (String) tempObject.get("password");
-            tempUser.email = (String) tempObject.get("email");
-            tempUser.age = (String) tempObject.get("age");
+            Customers tempCustomers = new Customers();
+            tempCustomers.username = (String) tempObject.get("username");
+            tempCustomers.password = (String) tempObject.get("password");
+            tempCustomers.email = (String) tempObject.get("email");
+            tempCustomers.age = (String) tempObject.get("age");
 
-            userArray[counter] = tempUser;
+            customersArray[counter] = tempCustomers;
             counter++;
         }
-        return userArray;
+        return customersArray;
     }
 
-    public User getUser(String username) {
+    public Customers getUser(String username) {
         if (!isUsernameTaken(username))
             return null;
 
@@ -221,7 +218,7 @@ public class User {
         for (Object obj : userData) {
             JSONObject tempObject = (JSONObject) obj;
             if (tempObject.get("username").equals(username)) {
-                return new User((String) tempObject.get("username"), (String) tempObject.get("password"),
+                return new Customers((String) tempObject.get("username"), (String) tempObject.get("password"),
                         (String) tempObject.get("email"), (String) tempObject.get("age"));
             }
         }

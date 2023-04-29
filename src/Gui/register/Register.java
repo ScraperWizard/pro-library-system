@@ -1,8 +1,7 @@
 package Gui.register;
 
-import Database.Users.User;
+import Database.Customers.Customers;
 import Gui.Login.Login;
-import Gui.loginSelector.loginSelector;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -16,7 +15,7 @@ public class Register {
 	private JPasswordField passwordField;
 
 	public Register(JFrame mainFrame) {
-		User globalUserObject = new User();
+		Customers globalCustomersObject = new Customers();
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);

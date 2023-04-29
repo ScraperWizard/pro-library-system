@@ -1,6 +1,6 @@
 package Gui.loginSelector;
 
-import Database.Users.User;
+import Database.Customers.Customers;
 import Gui.Login.Login;
 import Gui.staffLogin.staffLogin;
 
@@ -16,7 +16,7 @@ public class loginSelector {
 
     public loginSelector(JFrame mainFrame) {
         // DB user object
-        User globalUserObject = new User();
+        Customers globalCustomersObject = new Customers();
 
         // Declare new JPanel
         contentPane = new JPanel();

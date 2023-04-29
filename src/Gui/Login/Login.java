@@ -3,15 +3,12 @@ package Gui.Login;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import Database.Users.User;
+import Database.Customers.Customers;
 import Gui.loginSelector.loginSelector;
 import Gui.register.Register;
-import Gui.staffLogin.staffLogin;
 
-import java.awt.Window.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Method;
 
 public class Login {
 	public JPanel contentPane;
@@ -19,7 +16,7 @@ public class Login {
 	private JPasswordField passwordField;
 
 	public Login(JFrame mainFrame) {
-		User globalUserObject = new User();
+		Customers globalCustomersObject = new Customers();
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -80,7 +77,7 @@ public class Login {
 			boolean validLogin = false;
 
 			// Validate the login
-			if (globalUserObject.validateLogin(username, password)) {
+			if (globalCustomersObject.validateLogin(username, password)) {
 				validLogin = true;
 				contentPane.setVisible(false);
 //				staffLogin staffLogin = new staffLogin();
@@ -92,11 +89,10 @@ public class Login {
 				// Username error display
 				lblPasswordHeading.setText("Incorrect Password");
 				lblPasswordHeading.setForeground(Color.RED);
+				// Display login message
+				JOptionPane.showMessageDialog(null, validLogin ? "Valid login" : "Invalid login", "Login attempt",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
-
-			// Display login message
-			JOptionPane.showMessageDialog(null, validLogin ? "Valid login" : "Invalid login", "Login attempt",
-					JOptionPane.INFORMATION_MESSAGE);
 		});
 
 		JButton returnButton = new JButton("<- Return");

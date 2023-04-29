@@ -1,11 +1,12 @@
 //import Gui.*;
+import Database.Staff.Staff;
 import Gui.Main.MainFrame;
 import Gui.loginSelector.loginSelector;
 
 import java.awt.*;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

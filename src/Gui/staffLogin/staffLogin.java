@@ -1,13 +1,14 @@
 package Gui.staffLogin;
 
-import Database.Users.User;
+import Database.Customers.Customers;
+import Database.Staff.Staff;
 import Gui.Login.Login;
+import Gui.Staff.books.Books;
 import Gui.loginSelector.loginSelector;
 
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class staffLogin {
@@ -17,7 +18,7 @@ public class staffLogin {
 
     public staffLogin( JFrame mainFrame) {
         // DB user object
-        User globalUserObject = new User();
+        Staff globalStaffObject = new Staff();
 
         // Declare new JPanel
         contentPane = new JPanel();
@@ -54,9 +55,15 @@ public class staffLogin {
         staffLoginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent clickEvent) {
                 String uniqueId = uniqueIDInput.getText();
-                contentPane.setVisible(false);
-                Login newLogin = new Login(mainFrame);
-                mainFrame.setContentPane(newLogin.contentPane);
+                if(globalStaffObject.validateLogin(uniqueId)) {
+                    Books booksFrame = new Books(mainFrame, uniqueId);
+                    contentPane.setVisible(false);
+                    mainFrame.setContentPane(booksFrame.contentPane);
+                } else {
+                    lblUniqueID.setText("Incorrect ID");
+                    lblUniqueID.setForeground(Color.RED);
+                    JOptionPane.showMessageDialog(null, "Invalid login", "Login attempt", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 
