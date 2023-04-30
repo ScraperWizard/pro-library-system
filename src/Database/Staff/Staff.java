@@ -231,7 +231,7 @@ public class Staff {
             if (tempObject.get("uniqueID").equals(uniqueID)) {
                 return new Staff((String) tempObject.get("username"), (String) tempObject.get("password"),
                         (String) tempObject.get("email"), (String) tempObject.get("age"),
-                        (String) tempObject.get("role"), (String) tempObject.get("uniqueID"));
+                        (String) tempObject.get("uniqueID"), (String) tempObject.get("role"));
             }
         }
         return null;
