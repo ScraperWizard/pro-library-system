@@ -24,7 +24,6 @@ public class Books {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = (screenSize.width) / 2;
         int screenHeight = (screenSize.height) / 2;
-        System.out.println(globalStaffObject.getStaff(uniqueID).username);
 
         // Staff login heading
         JLabel lblNameHeading = new JLabel("Welcome, " + globalStaffObject.getStaff(uniqueID).username);
@@ -32,7 +31,7 @@ public class Books {
         lblNameHeading.setBounds(1420, 5, 400, 40);
         contentPane.add(lblNameHeading);
 
-        JButton returnButton = new JButton("<- Return");
+        JButton returnButton = new JButton("<- Logout");
         returnButton.setForeground(new Color(255, 0, 0));
         returnButton.setBounds(5, 5, 100, 40);
         contentPane.add(returnButton);

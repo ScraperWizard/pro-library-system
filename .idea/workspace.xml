@@ -4,55 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="Added GUI panels">
-      <change afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Database/Staff/Staff.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Database/Staff/Staff.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/Main/MainFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/Staff/books/Books$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/Staff/books/books.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/gui.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/register/Register$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/register/Register.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Gui/register/gui.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database/Customers/Customers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database/Staff/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Database/Staff/Staff.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Staff/books/Books.java" afterDir="false" />
+    <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="Abdulrahman - Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Database/Users/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Database/Users/Users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Users/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Users/Users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/loginSelector/loginSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/loginSelector/loginSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/Staff/books/Books$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Staff/books/Books$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/books/Books$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/books/Books$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/books/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/books/Books.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/staffLogin/staffLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Customers/Customers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Users/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/books/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/books/Books.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/register/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/staffLogin/staffLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/staffLogin/staffLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +101,7 @@
       <workItem from="1682570316988" duration="2036000" />
       <workItem from="1682701465637" duration="143000" />
       <workItem from="1682754000911" duration="1507000" />
-      <workItem from="1682755519694" duration="13270000" />
+      <workItem from="1682755519694" duration="15641000" />
     </task>
     <task id="LOCAL-00001" summary="make it better">
       <created>1682701518613</created>
@@ -192,7 +152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682766799669</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Abdulrahman - Update">
+      <created>1682771434756</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682771434756</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Abdulrahman - Update">
+      <created>1682771531918</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682771531918</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +199,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="make it better" />
     <MESSAGE value="Added GUI panels" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GUI panels" />
+    <MESSAGE value="Abdulrahman - Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abdulrahman - Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
