@@ -1,9 +1,8 @@
 package Gui.staffLogin;
 
-import Database.Customers.Customers;
 import Database.Staff.Staff;
-import Gui.Login.Login;
-import Gui.Staff.books.Books;
+import Gui.Staff.Customers.Customers;
+import Gui.Staff.sideMenu.sideMenu;
 import Gui.loginSelector.loginSelector;
 
 import java.awt.*;
@@ -38,27 +37,29 @@ public class staffLogin {
 
         // Unique ID heading
         JLabel lblUniqueID = new JLabel("Enter your unique ID");
-        lblUniqueID.setBounds(screenWidth - 87, screenHeight - 135, 206, 13);
+        lblUniqueID.setBounds(571, 246, 206, 13);
         contentPane.add(lblUniqueID);
 
         // Input field
         uniqueIDInput = new JPasswordField();
-        uniqueIDInput.setBounds(screenWidth - 90, screenHeight - 120, 150, 30);
+        uniqueIDInput.setBounds(571, 264, 200, 20);
         contentPane.add(uniqueIDInput);
         uniqueIDInput.setColumns(10);
 
         // Staff login button
         JButton staffLoginButton = new JButton("Login");
         staffLoginButton.setForeground(new Color(0, 52, 255));
-        staffLoginButton.setBounds(screenHeight + 150, screenWidth - 350, 300, 100);
+        staffLoginButton.setBounds(560, 329, 222, 31);
         contentPane.add(staffLoginButton);
+        
+        // Staff login handler
         staffLoginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent clickEvent) {
                 String uniqueId = uniqueIDInput.getText();
                 if(globalStaffObject.validateLogin(uniqueId)) {
-                    Books booksFrame = new Books(mainFrame, uniqueId);
                     contentPane.setVisible(false);
-                    mainFrame.setContentPane(booksFrame.contentPane);
+                    sideMenu sideMenuFrame = new sideMenu(mainFrame, uniqueId);
+                    mainFrame.setContentPane(sideMenuFrame.contentPane);
                 } else {
                     lblUniqueID.setText("Incorrect ID");
                     lblUniqueID.setForeground(Color.RED);
@@ -68,9 +69,9 @@ public class staffLogin {
         });
 
         // Staff login button
-        JButton returnButton = new JButton("<- Return");
+        JButton returnButton = new JButton("< Return");
         returnButton.setForeground(new Color(255, 0, 0));
-        returnButton.setBounds(5, 5, 100, 40);
+        returnButton.setBounds(5, 5, 100, 20);
         contentPane.add(returnButton);
         returnButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent clickEvent) {

@@ -12,15 +12,15 @@ import java.io.IOException;
 public class Staff {
     final String filePath = "src/Database/Staff/Staff.json";
     public String username;
-    public String password;
+    public String contact;
     public String email;
     public String age;
     public String uniqueID;
     public String role;
 
-    public Staff(String username, String password, String email, String age, String uniqueID, String role) {
+    public Staff(String username, String contact, String email, String age, String uniqueID, String role) {
         this.username = username;
-        this.password = password;
+        this.contact = contact;
         this.email = email;
         this.age = age;
         this.role = role;
@@ -199,7 +199,7 @@ public class Staff {
             JSONObject tempObject = (JSONObject) obj;
             Staff tempStaff = new Staff();
             tempStaff.username = (String) tempObject.get("username");
-            tempStaff.password = (String) tempObject.get("password");
+            tempStaff.contact = (String) tempObject.get("contact");
             tempStaff.email = (String) tempObject.get("email");
             tempStaff.age = (String) tempObject.get("age");
             tempStaff.role = (String) tempObject.get("role");
@@ -229,7 +229,7 @@ public class Staff {
         for (Object obj : userData) {
             JSONObject tempObject = (JSONObject) obj;
             if (tempObject.get("uniqueID").equals(uniqueID)) {
-                return new Staff((String) tempObject.get("username"), (String) tempObject.get("password"),
+                return new Staff((String) tempObject.get("username"), (String) tempObject.get("contact"),
                         (String) tempObject.get("email"), (String) tempObject.get("age"),
                         (String) tempObject.get("uniqueID"), (String) tempObject.get("role"));
             }

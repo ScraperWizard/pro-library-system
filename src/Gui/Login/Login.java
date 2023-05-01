@@ -9,6 +9,8 @@ import Gui.register.Register;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Login {
 	public JPanel contentPane;
@@ -53,22 +55,10 @@ public class Login {
 		passwordInput.setBounds(screenWidth - 100, screenHeight - 140, 187, 20);
 		contentPane.add(passwordInput);
 
-		// Or heading
-		JLabel lblOrHeading = new JLabel("Or");
-		lblOrHeading.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblOrHeading.setBounds(screenWidth - 25, screenHeight + 70, 300, 40);
-		contentPane.add(lblOrHeading);
-
-		// Register form
-		JButton registerButton = new JButton("Register");
-		registerButton.setForeground(new Color(0, 255, 124));
-		registerButton.setBounds(screenHeight + 250, screenWidth - 200, 100, 40);
-		contentPane.add(registerButton);
-
 		// Login button
 		JButton customerLoginButton = new JButton("Login");
 		customerLoginButton.setForeground(new Color(0, 52, 255));
-		customerLoginButton.setBounds(screenHeight + 150, screenWidth - 350, 300, 100);
+		customerLoginButton.setBounds(627, 284, 100, 31);
 		contentPane.add(customerLoginButton);
 		customerLoginButton.addActionListener(clickEvent -> {
 			// Get username and password
@@ -95,10 +85,38 @@ public class Login {
 			}
 		});
 
-		JButton returnButton = new JButton("<- Return");
+		JButton returnButton = new JButton("< Return");
 		returnButton.setForeground(new Color(255, 0, 0));
-		returnButton.setBounds(5, 5, 100, 40);
+		returnButton.setBounds(5, 5, 100, 20);
 		contentPane.add(returnButton);
+		 MouseAdapter panelMouseEventHandler = new MouseAdapter() {
+	            @Override
+	            public void mouseClicked(MouseEvent e) {
+	                contentPane.setVisible(false);
+	                Register RegisterFrame = new Register(mainFrame);
+	                mainFrame.setContentPane(RegisterFrame.contentPane);
+	            }
+
+	            @Override
+	            public void mouseEntered(MouseEvent event) {
+	                // handle mouse enter event
+	                event.getComponent().setForeground(Color.BLUE);
+	                event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	            }
+
+	            @Override
+	            public void mouseExited(MouseEvent event) {
+	                // handle mouse exit event
+	                event.getComponent().setForeground(Color.BLACK);
+	                event.getComponent().setCursor(Cursor.getDefaultCursor());
+	            }
+	        };
+			
+			JLabel lblNewLabel = new JLabel("Do not have an account? Register");
+			contentPane.add(lblNewLabel);
+			
+			lblNewLabel.setBounds(598, 346, 200, 14);
+	       lblNewLabel.addMouseListener(panelMouseEventHandler);
 		returnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent clickEvent) {
 				contentPane.setVisible(false);
@@ -107,12 +125,6 @@ public class Login {
 			}
 		});
 
-		registerButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent clickEvent) {
-				contentPane.setVisible(false);
-				Register registerFrame = new Register(mainFrame);
-				mainFrame.setContentPane(registerFrame.contentPane);
-			}
-		});
+		
 	}
 }
