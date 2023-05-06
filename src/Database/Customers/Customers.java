@@ -10,20 +10,20 @@ public class Customers {
     public String username;
     public String password;
     public String email;
-    public String age;
+    public String contact;
 
-    public Customers(String username, String password, String email, String age) {
+    public Customers(String username, String password, String email, String contact) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.age = age;
+        this.contact = contact;
     }
 
     public Customers() {
 
     }
 
-    public void addUser(String username, String password, String age, String email) throws Exception {
+    public void addUser(String username, String password, String contact, String email) throws Exception {
         // Check if collection exists
         // if (!isUsernameTaken(username))
         //     return;
@@ -33,7 +33,7 @@ public class Customers {
         JSONArray userData = null;
         userObject.put("username", username);
         userObject.put("password", password);
-        userObject.put("age", age);
+        userObject.put("contact", contact);
         userObject.put("email", email);
 
         // Read database
@@ -57,19 +57,22 @@ public class Customers {
     }
 
     public void editUserInformation(String username, String objectKey, String objectValue) {
-        // Check if collection exists
-        if (!isUsernameTaken(username))
-            return;
 
-        // Decleration
-        JSONArray userData = null;
+        // Check if collection exists
+        if (!isUsernameTaken(username)) {
+            System.out.println("editUserInformation: username not found");
+            return;
+        }
 
         // Read database
+        JSONArray userData = null;
         try (FileReader file = new FileReader(filePath)) {
             JSONParser parser = new JSONParser();
             userData = (JSONArray) parser.parse(file);
         } catch (IOException | ParseException error) {
-            System.out.println("An error has occured while reading DB.");
+            System.out.println("editUserInformation: an error has occured while reading DB.");
+            error.printStackTrace();
+            return;
         }
 
         // Loop over all elements of the object,
@@ -77,11 +80,30 @@ public class Customers {
         for (Object obj : userData) {
             JSONObject tempObject = (JSONObject) obj;
             if (tempObject.get("username").equals(username)) {
+                // Update object value
                 tempObject.put(objectKey, objectValue);
+
+                // Write updated data to file
+                try (FileWriter file = new FileWriter(filePath)) {
+                    file.write(userData.toJSONString());
+                    file.flush();
+                } catch (IOException error) {
+                    System.out.println("editUserInformation: an error has occurred while writing to DB.");
+                    error.printStackTrace();
+                    return;
+                }
+
+                // Return after successfully editing object
+                System.out.println("editUserInformation: object updated successfully");
+                return;
             }
         }
 
+        // If username is not found, print error message
+        System.out.println("editUserInformation: username not found");
     }
+
+
 
     public void removeUser(String username) {
         // Check if collection exists
@@ -190,7 +212,7 @@ public class Customers {
             tempCustomers.username = (String) tempObject.get("username");
             tempCustomers.password = (String) tempObject.get("password");
             tempCustomers.email = (String) tempObject.get("email");
-            tempCustomers.age = (String) tempObject.get("age");
+            tempCustomers.contact = (String) tempObject.get("contact");
 
             customersArray[counter] = tempCustomers;
             counter++;
@@ -219,7 +241,7 @@ public class Customers {
             JSONObject tempObject = (JSONObject) obj;
             if (tempObject.get("username").equals(username)) {
                 return new Customers((String) tempObject.get("username"), (String) tempObject.get("password"),
-                        (String) tempObject.get("email"), (String) tempObject.get("age"));
+                        (String) tempObject.get("email"), (String) tempObject.get("contact"));
             }
         }
         return null;

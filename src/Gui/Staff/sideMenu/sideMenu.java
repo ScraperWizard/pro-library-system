@@ -19,7 +19,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Database.Staff.Staff;
-import Gui.Staff.Customers.Customers;
+import Gui.Staff.Customers.Customer;
 import Gui.loginSelector.loginSelector;
 
 public class sideMenu {
@@ -47,7 +47,7 @@ public class sideMenu {
         mainFrame.setBounds(0, 150, screenSize.width, 588);
         mainFrame.setTitle("Pro Library - Staff");
         
-        Customers booksFrame = new Customers(mainFrame, uniqueID);
+        Customer booksFrame = new Customer(mainFrame, uniqueID);
         contentPane.add(booksFrame.customersPane);
         
         JPanel homePanel = new JPanel();

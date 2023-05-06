@@ -20,45 +20,39 @@ public class Register {
 	private JTextField PasswordInput;
 	private JTextField CheckPassword;
 	private JTextField UserNameInPut;
-	private JTextField EMaiLInput;
+	private JTextField emailInput;
 	private JTextField PhoneNumInput;
 	private JPasswordField PassWordInput;
 	private JPasswordField ReEnterPassInput;
-	
-	private  boolean validity () {
-	//Username Validity
+
+	private boolean validity() {
 		if (UserNameInPut.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(contentPane, "Username cannot be empty");
-			return false; 
+			JOptionPane.showMessageDialog(contentPane, "Please enter your username!");
+			return false;
+		} else if (emailInput.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(contentPane, "Please enter your email!");
+			return false;
+		} else if (new String(PassWordInput.getPassword()).isEmpty()) {
+			JOptionPane.showMessageDialog(contentPane, "Please choose a password!");
+			return false;
+		} else if (new String(ReEnterPassInput.getPassword()).isEmpty()) {
+			JOptionPane.showMessageDialog(contentPane, "Please re-enter your password");
+			return false;
+		} else if (PhoneNumInput.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(contentPane, "Please enter your phone number!");
+			return false;
+		} else if(new String(PassWordInput.getPassword()) == new String(ReEnterPassInput.getPassword())) {
+			JOptionPane.showMessageDialog(contentPane, "Passwords do not match!");
+			return false;
 		}
-	//Email validity
-		if (EMaiLInput.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(contentPane, "Email cannot be empty");
-			return false; 
-		}
-   //Password validity
-		if (PassWordInput.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(contentPane, "Password cannot be empty");
-			return false; 
-		}
-	// Re-enter password validity	
-		if (ReEnterPassInput.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(contentPane, "Re-enter cannot be empty");
-			return false; 
-		}
-	// Phone number validity
-		if (PhoneNumInput.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(contentPane, "Phone number cannot be empty");
-			return false; 
-		}
-		
-		return true;	
+
+		return true;
 	}
 
 	public Register(JFrame mainFrame) {
-		Customers globalUserObject = new Customers();
+		Customers globalCustomersObject = new Customers();
 		contentPane = new JPanel();
-		contentPane.setBackground(SystemColor.inactiveCaptionBorder);
+		contentPane.setBackground(new Color(57, 130, 146));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 
@@ -67,94 +61,10 @@ public class Register {
 		int screenWidth = (screenSize.width) / 2;
 		int screenHeight = (screenSize.height) / 2;
 
-	JButton returnButton = new JButton("< Return");
+		JButton returnButton = new JButton("< Return");
 		returnButton.setForeground(new Color(255, 0, 0));
 		returnButton.setBounds(5, 5, 100, 20);
 		contentPane.add(returnButton);
-		
-		JLabel UserNameVar = new JLabel("Username:");
-		UserNameVar.setBounds(643, 198, 94, 14);
-		contentPane.add(UserNameVar);
-		
-		UserNameInPut = new JTextField();
-		UserNameInPut.setBounds(643, 223, 135, 14);
-		contentPane.add(UserNameInPut);
-		UserNameInPut.setColumns(10);
-		
-		JLabel EMailVar = new JLabel("E-mail:");
-		EMailVar.setBounds(643, 248, 94, 14);
-		contentPane.add(EMailVar);
-		
-		EMaiLInput = new JTextField();
-		EMaiLInput.setColumns(10);
-		EMaiLInput.setBounds(643, 273, 135, 14);
-		contentPane.add(EMaiLInput);
-		
-		JLabel PassWordVar = new JLabel("Password");
-		PassWordVar.setBounds(643, 298, 94, 14);
-		contentPane.add(PassWordVar);
-		
-		JLabel RepeatPassVar = new JLabel("Re-enter Password");
-		RepeatPassVar.setBounds(643, 348, 135, 14);
-		contentPane.add(RepeatPassVar);
-		
-		JLabel PhoneNumVar = new JLabel("Phone Number");
-		PhoneNumVar.setBounds(643, 399, 94, 14);
-		contentPane.add(PhoneNumVar);
-		
-		PhoneNumInput = new JTextField();
-		PhoneNumInput.setColumns(10);
-		PhoneNumInput.setBounds(643, 424, 135, 14);
-		contentPane.add(PhoneNumInput);
-		
-		PassWordInput = new JPasswordField();
-		PassWordInput.setBounds(643, 323, 135, 14);
-		contentPane.add(PassWordInput);
-		
-		ReEnterPassInput = new JPasswordField();
-		ReEnterPassInput.setBounds(643, 373, 135, 14);
-		contentPane.add(ReEnterPassInput);
-		
-		JButton RegisterVar = new JButton("Register");
-		RegisterVar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				RegisterVar.setEnabled(validity());
-				if (validity() == (false)) {
-					RegisterVar.setEnabled(true);
-				} 
-				
-				Login newCustomer = new Login(mainFrame);
-				mainFrame.setContentPane(newCustomer.contentPane);
-			}
-		});
-		RegisterVar.setBackground(SystemColor.inactiveCaption);
-		RegisterVar.setBounds(663, 449, 100, 20);
-		contentPane.add(RegisterVar);
-		
-		  // Declare the mouse event handler
-        MouseAdapter panelMouseEventHandler = new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                contentPane.setVisible(false);
-                loginSelector loginSelectorFrame = new loginSelector(mainFrame);
-                mainFrame.setContentPane(loginSelectorFrame.contentPane);
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent event) {
-                // handle mouse enter event
-                event.getComponent().setBackground(new Color(123, 147, 163));
-                event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent event) {
-                // handle mouse exit event
-                event.getComponent().setBackground(new Color(83, 107, 123));
-                event.getComponent().setCursor(Cursor.getDefaultCursor());
-            }
-        };
-
 
 		returnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent clickEvent) {
@@ -163,5 +73,111 @@ public class Register {
 				mainFrame.setContentPane(loginFrame.contentPane);
 			}
 		});
+
+		JPanel registerPanel = new JPanel();
+		registerPanel.setBorder(null);
+		registerPanel.setBackground(new Color(57, 130, 146));
+		registerPanel.setBounds(718, 262, 303, 427);
+		contentPane.add(registerPanel);
+		registerPanel.setLayout(new GridLayout(0, 1, 0, 0));
+
+		JLabel lblNewLabel = new JLabel("Register as customer!");
+		lblNewLabel.setForeground(new Color(254, 255, 255));
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		registerPanel.add(lblNewLabel);
+
+		JLabel UserNameVar = new JLabel("Username:");
+		UserNameVar.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		UserNameVar.setForeground(new Color(254, 255, 255));
+		registerPanel.add(UserNameVar);
+
+		UserNameInPut = new JTextField();
+		registerPanel.add(UserNameInPut);
+		UserNameInPut.setColumns(10);
+
+		JLabel EMailVar = new JLabel("E-mail:");
+		EMailVar.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		EMailVar.setForeground(new Color(254, 255, 255));
+		registerPanel.add(EMailVar);
+
+		emailInput = new JTextField();
+		registerPanel.add(emailInput);
+		emailInput.setColumns(10);
+
+		JLabel PassWordVar = new JLabel("Password");
+		PassWordVar.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		PassWordVar.setForeground(new Color(254, 255, 255));
+		registerPanel.add(PassWordVar);
+
+		PassWordInput = new JPasswordField();
+		PassWordInput.setColumns(10);
+		registerPanel.add(PassWordInput);
+
+		JLabel RepeatPassVar = new JLabel("Re-enter Password");
+		RepeatPassVar.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		RepeatPassVar.setForeground(new Color(254, 255, 255));
+		registerPanel.add(RepeatPassVar);
+
+		ReEnterPassInput = new JPasswordField();
+		registerPanel.add(ReEnterPassInput);
+
+		JLabel PhoneNumVar = new JLabel("Phone Number");
+		PhoneNumVar.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		PhoneNumVar.setForeground(new Color(254, 255, 255));
+		registerPanel.add(PhoneNumVar);
+
+		PhoneNumInput = new JTextField();
+		registerPanel.add(PhoneNumInput);
+		PhoneNumInput.setColumns(10);
+
+		JButton RegisterVar = new JButton("Register");
+		RegisterVar.setForeground(new Color(0, 52, 255));
+		RegisterVar.setBounds(0, 0, 50, 50);
+		registerPanel.add(RegisterVar);
+
+		RegisterVar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (validity()) {
+					try {
+						globalCustomersObject.addUser(UserNameInPut.getText(), new String(PassWordInput.getPassword()),
+								PhoneNumInput.getText(), emailInput.getText());
+						JOptionPane.showMessageDialog(contentPane, "Account registered!");
+						contentPane.setVisible(false);
+						Login newCustomer = new Login(mainFrame);
+						mainFrame.setContentPane(newCustomer.contentPane);
+					} catch (Exception dbError) {
+						// TODO Auto-generated catch block
+						System.out.print("An error has occured while accessing DB.");
+					}
+				}
+			}
+		});
+
+		RegisterVar.setBackground(new Color(254, 255, 255));
+
+		// Declare the mouse event handler
+		MouseAdapter panelMouseEventHandler = new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				contentPane.setVisible(false);
+				loginSelector loginSelectorFrame = new loginSelector(mainFrame);
+				mainFrame.setContentPane(loginSelectorFrame.contentPane);
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent event) {
+				// handle mouse enter event
+				event.getComponent().setBackground(new Color(123, 147, 163));
+				event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+
+			@Override
+			public void mouseExited(MouseEvent event) {
+				// handle mouse exit event
+				event.getComponent().setBackground(new Color(83, 107, 123));
+				event.getComponent().setCursor(Cursor.getDefaultCursor());
+			}
+		};
 	}
 }

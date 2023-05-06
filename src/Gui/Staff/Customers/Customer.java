@@ -2,6 +2,7 @@ package Gui.Staff.Customers;
 
 import Database.Staff.Staff;
 import Gui.loginSelector.loginSelector;
+import Database.Customers.Customers;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -9,13 +10,14 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Customers {
+public class Customer {
     public JPanel customersPane;
     private JTable table_1;
     private JTable table_2;
 
-    public Customers(JFrame mainFrame, String uniqueID) {
+    public Customer(JFrame mainFrame, String uniqueID) {
         Staff globalStaffObject = new Staff();
+        Customers globalCustomerObject = new Customers();
         Staff currentUser = globalStaffObject.getStaff(uniqueID);
         customersPane = new JPanel();
         customersPane.setBackground(new Color(76, 128, 144));
@@ -35,66 +37,66 @@ public class Customers {
         panel.setLayout(null);
         
         JLabel lblNewLabel = new JLabel("CUSTOMERS");
-        lblNewLabel.setBounds(579, 6, 125, 25);
-        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
+        lblNewLabel.setForeground(new Color(254, 255, 255));
+        lblNewLabel.setBounds(579, 6, 170, 25);
+        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel.setBackground(new Color(76, 128, 144));
         panel.add(lblNewLabel);
 
-        Staff[] allStaff = globalStaffObject.getAllStaff();
+        Customers[] allCustomers = globalCustomerObject.getAllUsers();
 
-// Table
-        String[] columnNames = {"ID", "Phone", "Email", "Name", "Age", "Role"};
+        // Table
+        String[] columnNames = {"Name", "Email", "Contact Number"};
 
-        Object[][] data = new Object[allStaff.length][6];
+        Object[][] data = new Object[allCustomers.length][3];
 
-        for(int i = 0; i < allStaff.length; i++) {
-            data[i][0] = allStaff[i].uniqueID;
-            data[i][1] = allStaff[i].contact;
-            data[i][2] = allStaff[i].email;
-            data[i][3] = allStaff[i].username;
-            data[i][4] = allStaff[i].age;
-            data[i][5] = allStaff[i].role;
+        for(int i = 0; i < allCustomers.length; i++) {
+            data[i][0] = allCustomers[i].username;
+            data[i][1] = allCustomers[i].email;
+            data[i][2] = allCustomers[i].contact;
         }
-
-
-//        JTable table = new JTable(data, columnNames);
-//        JScrollPane scrollPane = new JScrollPane(table);
-//        table.setBounds(103, 99, 734, 348);
-//        customersPane.add(scrollPane);
         
         JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(296, 93, 710, data[0].length * 30);
+        scrollPane_1.setBounds(320, 93, 710, data[0].length * 30);
         customersPane.add(scrollPane_1);
         
         table_2 = new JTable(data, columnNames);
+        table_2.setShowGrid(false);
+        table_2.setEnabled(false);
+        table_2.setBackground(new Color(88, 127, 143));
         scrollPane_1.setViewportView(table_2);
         
-//        table_1 = new JTable();
-//        table_1.setBounds(103, 99, 734, 348);
-//        customersPane.add(table_1);
+        JPanel optionsPanel = new JPanel();
+        optionsPanel.setBackground(new Color(76, 128, 144));
+        optionsPanel.setBounds(1100, 90, 229, 103);
+        customersPane.add(optionsPanel);
+        optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
+        
+        JButton editUserInformationButton = new JButton("Edit user information");
+        editUserInformationButton.setBackground(new Color(32, 99, 143));
+        editUserInformationButton.setForeground(new Color(32, 99, 143));
+        optionsPanel.add(editUserInformationButton);
+        editUserInformationButton.setFont(new Font("Dialog", Font.BOLD, 14));
+        
+        JButton customerSupportButton = new JButton("Customer support");
+        customerSupportButton.setBackground(new Color(32, 99, 143));
+        customerSupportButton.setFont(new Font("Dialog", Font.BOLD, 14));
+        customerSupportButton.setForeground(new Color(32, 99, 143));
+        optionsPanel.add(customerSupportButton);
+        
+        // When you click edit user info button
+        editUserInformationButton.addActionListener(clickEvent -> {
+        	editUserInformation editFrame = new editUserInformation();
+        });
         
         // Declare the mouse event handler
-        MouseAdapter panelMouseEventHandler = new MouseAdapter() {
+        MouseAdapter editUserInformationHandler = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
             	customersPane.setVisible(false);
                 loginSelector loginSelectorFrame = new loginSelector(mainFrame);
                 mainFrame.setContentPane(loginSelectorFrame.contentPane);
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent event) {
-                // handle mouse enter event
-                event.getComponent().setBackground(new Color(123, 147, 163));
-                event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent event) {
-                // handle mouse exit event
-                event.getComponent().setBackground(new Color(83, 107, 123));
-                event.getComponent().setCursor(Cursor.getDefaultCursor());
             }
         };
         
