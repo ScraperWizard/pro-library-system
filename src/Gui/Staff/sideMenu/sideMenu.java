@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Database.Staff.Staff;
+import Gui.Staff.Books.Books;
 import Gui.Staff.Customers.Customer;
 import Gui.loginSelector.loginSelector;
 
@@ -47,8 +48,9 @@ public class sideMenu {
         mainFrame.setBounds(0, 150, screenSize.width, 588);
         mainFrame.setTitle("Pro Library - Staff");
         
-        Customer booksFrame = new Customer(mainFrame, uniqueID);
-        contentPane.add(booksFrame.customersPane);
+        // This will open Customer page
+        Customer customersFrame = new Customer(mainFrame, uniqueID);
+        contentPane.add(customersFrame.customersPane);
         
         JPanel homePanel = new JPanel();
         homePanel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -185,14 +187,18 @@ public class sideMenu {
         logoPanel.add(lblLogo);
 
 
-
         // Declare the mouse event handler
         MouseAdapter panelMouseEventHandler = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent event) {
-                contentPane.setVisible(false);
-                loginSelector loginSelectorFrame = new loginSelector(mainFrame);
-                mainFrame.setContentPane(loginSelectorFrame.contentPane);
+            	Component optionClicked = event.getComponent();
+            	if(optionClicked == booksPanel) {
+            		customersFrame.customersPane.setVisible(false);
+                    Books booksFrame = new Books(mainFrame);
+                    contentPane.add(booksFrame.booksPane);
+            	} else if(optionClicked == customersPanel) {
+            		
+            	}
             }
 
             @Override

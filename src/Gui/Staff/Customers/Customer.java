@@ -6,6 +6,8 @@ import Database.Customers.Customers;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -30,32 +32,10 @@ public class Customer {
         int screenHeight = (screenSize.height) / 2;
         customersPane.setBounds(270, 0, screenSize.width, screenSize.height);
         
-        JPanel panel = new JPanel();
-        panel.setBackground(new Color(76, 128, 144));
-        panel.setBounds(6, 6, screenSize.width, 30);
-        customersPane.add(panel);
-        panel.setLayout(null);
-        
-        JLabel lblNewLabel = new JLabel("CUSTOMERS");
-        lblNewLabel.setForeground(new Color(254, 255, 255));
-        lblNewLabel.setBounds(579, 6, 170, 25);
-        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBackground(new Color(76, 128, 144));
-        panel.add(lblNewLabel);
-
-        Customers[] allCustomers = globalCustomerObject.getAllUsers();
-
         // Table
         String[] columnNames = {"Name", "Email", "Contact Number"};
-
-        Object[][] data = new Object[allCustomers.length][3];
-
-        for(int i = 0; i < allCustomers.length; i++) {
-            data[i][0] = allCustomers[i].username;
-            data[i][1] = allCustomers[i].email;
-            data[i][2] = allCustomers[i].contact;
-        }
+        // Data
+        Object[][] data = getTable(globalCustomerObject);
         
         JScrollPane scrollPane_1 = new JScrollPane();
         scrollPane_1.setBounds(320, 93, 710, data[0].length * 30);
@@ -85,9 +65,33 @@ public class Customer {
         customerSupportButton.setForeground(new Color(32, 99, 143));
         optionsPanel.add(customerSupportButton);
         
+        JButton refreshButton = new JButton("Refresh");
+        refreshButton.setForeground(new Color(32, 99, 143));
+        refreshButton.setFont(new Font("Dialog", Font.BOLD, 14));
+        refreshButton.setBackground(new Color(32, 99, 143));
+        optionsPanel.add(refreshButton);
+        
+        JPanel panel = new JPanel();
+        optionsPanel.add(panel);
+        panel.setBackground(new Color(76, 128, 144));
+        panel.setLayout(null);
+        
+        JLabel lblNewLabel = new JLabel("CUSTOMERS");
+        lblNewLabel.setForeground(new Color(254, 255, 255));
+        lblNewLabel.setBounds(579, 6, 170, 25);
+        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel.setBackground(new Color(76, 128, 144));
+        panel.add(lblNewLabel);
+        
         // When you click edit user info button
         editUserInformationButton.addActionListener(clickEvent -> {
         	editUserInformation editFrame = new editUserInformation();
+        });
+        
+        refreshButton.addActionListener(clickEvent -> {
+        	refreshTable(table_2, customersPane, globalCustomerObject);
+            System.out.print("Refreshed");
         });
         
         // Declare the mouse event handler
@@ -111,4 +115,34 @@ public class Customer {
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         return scaledIcon;
     }
+    
+    public Object[][] getTable(Customers globalCustomerObject) {
+    	Customers[] allCustomers = globalCustomerObject.getAllUsers();
+
+        Object[][] data = new Object[allCustomers.length][3];
+
+        for(int i = 0; i < allCustomers.length; i++) {
+            data[i][0] = allCustomers[i].username;
+            data[i][1] = allCustomers[i].email;
+            data[i][2] = allCustomers[i].contact;
+        }
+        
+        return data;
+    }
+    
+    public void refreshTable(JTable table, JPanel panel, Customers globalCustomerObject) {
+        // get the updated data for the table
+        Object[][] data = getTable(globalCustomerObject);
+        
+        // create a new table model with the updated data
+        DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[] {"Name", "Email", "Contact Number"});
+        table.setModel(newTableModel);
+
+        // revalidate and repaint the table and the panel to refresh the view
+        table.revalidate();
+        table.repaint();
+        panel.revalidate();
+        panel.repaint();
+    }
+
 }
