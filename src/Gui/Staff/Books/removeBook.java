@@ -6,7 +6,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -19,7 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
 import Database.BooksDB.BooksDB;
 import Database.Customers.*;
 
@@ -73,7 +71,6 @@ public class removeBook {
                 try {
                     for(String book : selectedBooks) {
                         System.out.println("Trying to remove -> " + book);
-                        
                         globalBooksDBObject.removeBook(book);
                     }
                     JOptionPane.showMessageDialog(panel, "Book(s) have been removed!");

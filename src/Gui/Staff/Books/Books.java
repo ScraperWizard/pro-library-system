@@ -7,7 +7,9 @@ import Database.Customers.Customers;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -33,12 +35,13 @@ public class Books {
         booksPane.setBounds(270, 0, screenSize.width, screenSize.height);
         
         // Table
-        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date"};
+        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status"};
         // Data
         Object[][] data = getTable(globalBooksObject);
+        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
         
         JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(320, 93, 710, data[0].length * 30);
+        scrollPane_1.setBounds(320, 93, 710, heightOfTable);
         booksPane.add(scrollPane_1);
         
         table = new JTable(data, columnNames);
@@ -46,6 +49,10 @@ public class Books {
         table.setEnabled(false);
         table.setBackground(new Color(88, 127, 143));
         scrollPane_1.setViewportView(table);
+        
+        // Call method to change color of all statuses
+        setStatusColor();
+      
         
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
@@ -65,11 +72,11 @@ public class Books {
         removeBooksBtn.setForeground(new Color(32, 99, 143));
         optionsPanel.add(removeBooksBtn);
         
-        JButton btnEditBook = new JButton("Edit book");
-        btnEditBook.setForeground(new Color(32, 99, 143));
-        btnEditBook.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnEditBook.setBackground(new Color(32, 99, 143));
-        optionsPanel.add(btnEditBook);
+        JButton editBooksBtn = new JButton("Edit book");
+        editBooksBtn.setForeground(new Color(32, 99, 143));
+        editBooksBtn.setFont(new Font("Dialog", Font.BOLD, 14));
+        editBooksBtn.setBackground(new Color(32, 99, 143));
+        optionsPanel.add(editBooksBtn);
         
         JButton refreshButton = new JButton("Refresh");
         refreshButton.setForeground(new Color(32, 99, 143));
@@ -86,8 +93,12 @@ public class Books {
         	removeBook removeBooksFrame = new removeBook();
         });
         
+        editBooksBtn.addActionListener(clickEvent -> {
+        	editBook editBooksFrame = new editBook();
+        });
+        
         refreshButton.addActionListener(clickEvent -> {
-        	refreshTable(table, booksPane, globalBooksObject);
+        	refreshTable(table, booksPane, globalBooksObject, scrollPane_1);
             System.out.print("Refreshed");
         });
         
@@ -116,7 +127,7 @@ public class Books {
     public Object[][] getTable(BooksDB globalBooksObject) {
     	BooksDB[] allBooks = globalBooksObject.getAllBooks();
 
-        Object[][] data = new Object[allBooks.length][5];
+        Object[][] data = new Object[allBooks.length][6];
 
         for(int i = 0; i < allBooks.length; i++) {
             data[i][0] = allBooks[i].author;
@@ -124,19 +135,23 @@ public class Books {
             data[i][2] = allBooks[i].genre;
             data[i][3] = allBooks[i].borrowedBy;
             data[i][4] = allBooks[i].borrowDate;
-            System.out.print(data[i][0] + " " + data[i][1]);
+            data[i][5] = allBooks[i].status;
             
         }
-        System.out.print(false);
+        
         return data;
     }
     
-    public void refreshTable(JTable table, JPanel panel, BooksDB globalBooksObject) {
+    public void refreshTable(JTable table, JPanel panel, BooksDB globalBooksObject, JScrollPane scrollPanel) {
         // get the updated data for the table
         Object[][] data = getTable(globalBooksObject);
         
+        // Adjust length of table
+        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
+        scrollPanel.setBounds(320, 93, 710, heightOfTable);
+        
         // create a new table model with the updated data
-        DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[] {"Author", "Book", "Genre", "Borrowed By", "Borrow date"});
+        DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[] {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status"});
         table.setModel(newTableModel);
 
         // revalidate and repaint the table and the panel to refresh the view
@@ -144,6 +159,40 @@ public class Books {
         table.repaint();
         panel.revalidate();
         panel.repaint();
+        
+        // Call method to change color of all statuses
+        setStatusColor();
+    }
+    
+    public void setStatusColor() {
+        // Get the TableColumn object for the "Status" column
+        TableColumn statusColumn = table.getColumnModel().getColumn(5);
+
+        // Define a custom cell renderer for the "Status" column
+        statusColumn.setCellRenderer(new DefaultTableCellRenderer() {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                // Create a new label to hold the cell value
+                JLabel cellLabel = new JLabel();
+
+                // Get the value of the "Status" column for this cell
+                String status = (String) value;
+
+                // Set the background and foreground color of the cell based on the status value
+                if (status.equals("AVAILABLE")) {
+                    cellLabel.setForeground(Color.GREEN);
+                } else if (status.equals("SOLD")) {
+                    cellLabel.setForeground(Color.RED);
+                } else if(status.equals("BORROWED")) {
+                	cellLabel.setForeground(Color.YELLOW);
+                }
+                
+                // Set the text of the label to the value of the "Status" column for this cell
+                cellLabel.setText(status);
+
+                // Return the label as the cell renderer component
+                return cellLabel;
+            }
+        });
     }
 
 }

@@ -105,7 +105,7 @@ public class addBooks {
         		JOptionPane.showMessageDialog(panel, "Please fill in fields!");
         	} else {
         		try {
-					globalBooksDBObject.addBook(authorValue, bookValue, genreValue, bookValue, genreValue);
+					globalBooksDBObject.addBook(authorValue, bookValue, genreValue, bookValue, genreValue, "AVAILABLE", "N/A");
 					JOptionPane.showMessageDialog(panel, bookValue + " has been added.");
 				} catch (Exception error) {
 					// TODO Auto-generated catch block

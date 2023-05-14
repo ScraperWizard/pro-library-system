@@ -1,7 +1,6 @@
 package Gui.staffLogin;
 
 import Database.Staff.Staff;
-import Gui.Staff.Customers.Customers;
 import Gui.Staff.sideMenu.sideMenu;
 import Gui.loginSelector.loginSelector;
 

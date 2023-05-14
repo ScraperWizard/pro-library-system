@@ -1,6 +1,7 @@
 package Database.BooksDB;
 
 import java.io.*;
+import java.util.Iterator;
 
 import org.json.simple.*;
 import org.json.simple.parser.*;
@@ -12,108 +13,104 @@ public class BooksDB {
     public String genre;
     public String borrowedBy;
     public String borrowDate;
+    public String status;
+    public String note;
 
-    public BooksDB(String author, String book, String genre, String borrowedBy, String borrowDate) {
+    public BooksDB(String author, String book, String genre, String borrowedBy, String borrowDate, String status, String note) {
         this.author = author;
         this.book = book;
         this.genre = genre;
         this.borrowedBy = borrowedBy;
         this.borrowDate = borrowDate;
+        this.status = status;
+        this.note = note;
     }
 
     public BooksDB() {
 
     }
 
-    public void addBook(String author, String book, String genre, String borrowedBy, String borrowDate) throws Exception {
+    public void addBook(String author, String book, String genre, String borrowedBy, String borrowDate, String status, String note) throws Exception {
         // Check if collection exists
         // if (!isUsernameTaken(username))
         //     return;
 
         // Create a json object and append all information to it
-        JSONObject userObject = new JSONObject();
-        JSONArray userData = null;
-        userObject.put("author", author);
-        userObject.put("book", book);
-        userObject.put("genre", genre);
-        userObject.put("borrowedBy", borrowedBy);
-        userObject.put("borrowDate", borrowDate);
+        JSONObject bookObject = new JSONObject();
+        JSONArray booksData = null;
+        bookObject.put("author", author);
+        bookObject.put("book", book);
+        bookObject.put("genre", genre);
+        bookObject.put("borrowedBy", borrowedBy);
+        bookObject.put("borrowDate", borrowDate);
+        bookObject.put("status", status);
+        bookObject.put("note", note);
 
         // Read database
         try (FileReader file = new FileReader(filePath)) {
             JSONParser parser = new JSONParser();
-            userData = (JSONArray) parser.parse(file);
+            booksData = (JSONArray) parser.parse(file);
         } catch (IOException | ParseException error) {
             System.out.println("An error has occured while reading DB.");
         }
 
         // Merge the two objects together
-        userData.add(userObject);
+        booksData.add(bookObject);
 
         // Write json object to file
         try (FileWriter file = new FileWriter(filePath)) {
-            file.write(userData.toJSONString());
+            file.write(booksData.toJSONString());
             System.out.println("Book " + book + " has been added to DB.");
         } catch (IOException error) {
             System.out.println("An error has occured while writing to DB.");
         }
     }
 
-    public void editUserInformation(String username, String objectKey, String objectValue) {
-
-        // Check if collection exists
-        if (!isUsernameTaken(username)) {
-            System.out.println("editUserInformation: username not found");
-            return;
-        }
-
+    public void editBookInformation(String bookTitle, String objectKey, String objectValue) {
         // Read database
-        JSONArray userData = null;
+        JSONArray booksData = null;
         try (FileReader file = new FileReader(filePath)) {
             JSONParser parser = new JSONParser();
-            userData = (JSONArray) parser.parse(file);
+            booksData = (JSONArray) parser.parse(file);
         } catch (IOException | ParseException error) {
-            System.out.println("editUserInformation: an error has occured while reading DB.");
+            System.out.println("editBookInformation: an error has occurred while reading DB.");
             error.printStackTrace();
             return;
         }
 
-        // Loop over all elements of the object,
-        // and search for username object
-        for (Object obj : userData) {
+        // Loop over all books in the database,
+        // and search for book with matching title
+        for (Object obj : booksData) {
             JSONObject tempObject = (JSONObject) obj;
-            if (tempObject.get("username").equals(username)) {
+            if (tempObject.get("book").equals(bookTitle)) {
                 // Update object value
                 tempObject.put(objectKey, objectValue);
 
                 // Write updated data to file
                 try (FileWriter file = new FileWriter(filePath)) {
-                    file.write(userData.toJSONString());
+                    file.write(booksData.toJSONString());
                     file.flush();
                 } catch (IOException error) {
-                    System.out.println("editUserInformation: an error has occurred while writing to DB.");
+                    System.out.println("editBookInformation: an error has occurred while writing to DB.");
                     error.printStackTrace();
                     return;
                 }
 
                 // Return after successfully editing object
-                System.out.println("editUserInformation: object updated successfully");
+                System.out.println("editBookInformation: book updated successfully");
                 return;
             }
         }
 
-        // If username is not found, print error message
-        System.out.println("editUserInformation: username not found");
+        // If book is not found, print error message
+        System.out.println("editBookInformation: book not found");
     }
-
-
 
     public void removeBook(String bookName) {
         // Check if collection exists
-//        if (!isUsernameTaken(username))
-//            return;
+        System.out.println("Remove book Has been called");
 
-        // Decleration
+        // Declaration
         JSONArray booksData = null;
 
         // Read database
@@ -124,69 +121,24 @@ public class BooksDB {
             System.out.println("An error has occured while reading DB.");
         }
 
-        // Loop over all elements of the object,
-        // and search for book object
-        for (Object obj : booksData) {
-            JSONObject tempObject = (JSONObject) obj;
+        // Remove book object from JSONArray using an Iterator
+        Iterator<Object> iter = booksData.iterator();
+        while (iter.hasNext()) {
+            JSONObject tempObject = (JSONObject) iter.next();
             if (tempObject.get("book").equals(bookName)) {
-                booksData.remove(tempObject);
+                iter.remove(); // remove book object safely using the iterator's remove() method
+                // If normal loop is used it will throw an exception as you cannot modify JSONObject
+                // While iterating
             }
         }
 
         // Write json object to file
         try (FileWriter file = new FileWriter(filePath)) {
-            file.write(booksData.toJSONString());
-            System.out.println("User " + bookName + " has been deleted from DB.");
+            file.write(booksData.toJSONString()); // write the updated JSON array to file
+            System.out.println("Book " + bookName + " has been deleted from DB.");
         } catch (IOException error) {
             System.out.println("An error has occured while writing to DB.");
         }
-
-    }
-
-    public boolean isUsernameTaken(String username) {
-        boolean result = false;
-        JSONArray userData = null;
-
-        // Read database
-        try (FileReader file = new FileReader(filePath)) {
-            JSONParser parser = new JSONParser();
-            userData = (JSONArray) parser.parse(file);
-        } catch (IOException | ParseException error) {
-            System.out.println("An error has occured while reading DB.");
-        }
-
-        // Loop over all elements of the object,
-        // and check if username exists
-        for (Object obj : userData) {
-            JSONObject tempObject = (JSONObject) obj;
-            if (tempObject.get("username").equals(username))
-                result = true;
-        }
-
-        return result;
-    }
-
-    public boolean validateLogin(String username, String password) {
-        boolean result = false;
-        JSONArray userData = null;
-
-        // Read database
-        try (FileReader file = new FileReader(filePath)) {
-            JSONParser parser = new JSONParser();
-            userData = (JSONArray) parser.parse(file);
-        } catch (IOException | ParseException error) {
-            System.out.println("An error has occured while reading DB.");
-        }
-
-        // Loop over all elements of the object,
-        // and check if username exists
-        for (Object obj : userData) {
-            JSONObject tempObject = (JSONObject) obj;
-            if (tempObject.get("username").equals(username) && tempObject.get("password").equals(password))
-                result = true;
-        }
-
-        return result;
     }
 
     public BooksDB[] getAllBooks() {
@@ -195,7 +147,7 @@ public class BooksDB {
         // Decleration
         JSONArray userData = null;
 
-        // Read database
+        // Read databasew
         try (FileReader file = new FileReader(filePath)) {
             JSONParser parser = new JSONParser();
             userData = (JSONArray) parser.parse(file);
@@ -217,6 +169,8 @@ public class BooksDB {
             tempBooksDB.genre = (String) tempObject.get("genre");
             tempBooksDB.borrowedBy = (String) tempObject.get("borrowedBy");
             tempBooksDB.borrowDate = (String) tempObject.get("borrowDate");
+            tempBooksDB.status = (String) tempObject.get("status");
+            tempBooksDB.note = (String) tempObject.get("note");
 
             BooksArray[counter] = tempBooksDB;
             counter++;
@@ -224,31 +178,40 @@ public class BooksDB {
 
         return BooksArray;
     }
+    
+    public BooksDB getBook(String bookTitle) {
+        // Declare a variable to hold the BooksDB object corresponding to the specified book title
+        BooksDB book = null;
 
-    public Customers getUser(String username) {
-        if (!isUsernameTaken(username))
-            return null;
-
-        // Decleration
-        JSONArray userData = null;
-
-        // Read database
+        // Read the database
         try (FileReader file = new FileReader(filePath)) {
             JSONParser parser = new JSONParser();
-            userData = (JSONArray) parser.parse(file);
+            JSONArray userData = (JSONArray) parser.parse(file);
+
+            // Loop over all elements of the object and search for the book title
+            for (Object obj : userData) {
+                JSONObject tempObject = (JSONObject) obj;
+
+                // If the current object corresponds to the specified book title, create a BooksDB object for it
+                if (tempObject.get("book").equals(bookTitle)) {
+                    book = new BooksDB();
+                    book.author = (String) tempObject.get("author");
+                    book.book = (String) tempObject.get("book");
+                    book.genre = (String) tempObject.get("genre");
+                    book.borrowedBy = (String) tempObject.get("borrowedBy");
+                    book.borrowDate = (String) tempObject.get("borrowDate");
+                    book.status = (String) tempObject.get("status");
+                    book.note = (String) tempObject.get("note");
+                    
+                    break;
+                }
+            }
+            
         } catch (IOException | ParseException error) {
-            System.out.println("An error has occured while reading DB.");
+            System.out.println("An error has occurred while reading the database.");
         }
 
-        // Loop over all elements of the object,
-        // and search for username object
-        for (Object obj : userData) {
-            JSONObject tempObject = (JSONObject) obj;
-            if (tempObject.get("username").equals(username)) {
-                return new Customers((String) tempObject.get("username"), (String) tempObject.get("password"),
-                        (String) tempObject.get("email"), (String) tempObject.get("contact"));
-            }
-        }
-        return null;
+        // Return the BooksDB object corresponding to the specified book title, or null if the book is not found
+        return book;
     }
 }
