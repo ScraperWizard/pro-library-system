@@ -9,9 +9,12 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -35,7 +38,8 @@ public class Books {
         booksPane.setBounds(270, 0, screenSize.width, screenSize.height);
         
         // Table
-        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status"};
+        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status", "Action"};
+
         // Data
         Object[][] data = getTable(globalBooksObject);
         int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
@@ -46,13 +50,13 @@ public class Books {
         
         table = new JTable(data, columnNames);
         table.setShowGrid(false);
-        table.setEnabled(false);
+        table.setEnabled(true);
         table.setBackground(new Color(88, 127, 143));
         scrollPane_1.setViewportView(table);
         
         // Call method to change color of all statuses
         setStatusColor();
-      
+        addActionButtons();
         
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
@@ -101,17 +105,6 @@ public class Books {
         	refreshTable(table, booksPane, globalBooksObject, scrollPane_1);
             System.out.print("Refreshed");
         });
-        
-        // Declare the mouse event handler
-        MouseAdapter editUserInformationHandler = new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-            	booksPane.setVisible(false);
-                loginSelector loginSelectorFrame = new loginSelector(mainFrame);
-                mainFrame.setContentPane(loginSelectorFrame.contentPane);
-            }
-        };
-        
     }
     
     public ImageIcon changeIcon(int width, int height, String path) {
@@ -127,7 +120,7 @@ public class Books {
     public Object[][] getTable(BooksDB globalBooksObject) {
     	BooksDB[] allBooks = globalBooksObject.getAllBooks();
 
-        Object[][] data = new Object[allBooks.length][6];
+        Object[][] data = new Object[allBooks.length][7];
 
         for(int i = 0; i < allBooks.length; i++) {
             data[i][0] = allBooks[i].author;
@@ -136,7 +129,6 @@ public class Books {
             data[i][3] = allBooks[i].borrowedBy;
             data[i][4] = allBooks[i].borrowDate;
             data[i][5] = allBooks[i].status;
-            
         }
         
         return data;
@@ -191,6 +183,33 @@ public class Books {
 
                 // Return the label as the cell renderer component
                 return cellLabel;
+            }
+        });
+    }
+
+    public void addActionButtons() {
+        // Get the TableColumn object for the "Status" column
+        TableColumn actionColumn = table.getColumnModel().getColumn(6);
+
+        // Define a custom cell renderer for the "Action" column
+        actionColumn.setCellRenderer(new DefaultTableCellRenderer() {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                // Create a new button to hold the cell value
+                JButton cellButton = new JButton("Action");
+
+                // Set the background and foreground color of the cell
+                cellButton.setBackground(Color.WHITE);
+                cellButton.setForeground(Color.BLACK);
+
+                cellButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // Display a message when the button is clicked
+                        JOptionPane.showMessageDialog(null, "Button clicked for row " + row);
+                    }
+                });
+
+                // Return the button as the cell renderer component
+                return cellButton;
             }
         });
     }
