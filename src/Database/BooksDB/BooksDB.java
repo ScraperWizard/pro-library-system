@@ -1,8 +1,12 @@
 package Database.BooksDB;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Iterator;
 
+import Database.Logs.Logs;
+import Database.Staff.Staff;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
@@ -15,6 +19,7 @@ public class BooksDB {
     public String borrowDate;
     public String status;
     public String note;
+    Staff globalStaffObject = new Staff();
 
     public BooksDB(String author, String book, String genre, String borrowedBy, String borrowDate, String status, String note) {
         this.author = author;
@@ -30,7 +35,19 @@ public class BooksDB {
 
     }
 
-    public void addBook(String author, String book, String genre, String borrowedBy, String borrowDate, String status, String note) throws Exception {
+    /**
+     * Adds a new book to the database.
+     *
+     * @param author      the author of the book
+     * @param book        the title of the book
+     * @param genre       the genre of the book
+     * @param borrowedBy  the name of the person borrowing the book
+     * @param borrowDate  the date when the book was borrowed
+     * @param status      the status of the book (e.g., "Available", "Borrowed")
+     * @param note        additional note about the book
+     * @throws Exception if an error occurs while adding the book to the database
+     */
+    public void addBook(String author, String book, String genre, String borrowedBy, String borrowDate, String status, String note, String uniqueId) throws Exception {
         // Check if collection exists
         // if (!isUsernameTaken(username))
         //     return;
@@ -64,8 +81,19 @@ public class BooksDB {
         } catch (IOException error) {
             System.out.println("An error has occured while writing to DB.");
         }
+
+        // Log action
+        Staff staff = globalStaffObject.getStaff(uniqueId);
+        Logs.addLogs("Book added", staff.username, staff.role, "null", LocalDate.now().toString(), book);
     }
 
+    /**
+     * Edits the information of a book in the database.
+     *
+     * @param bookTitle   the title of the book to edit
+     * @param objectKey   the key of the object to edit (e.g., "author", "genre", "borrowedBy")
+     * @param objectValue the new value to assign to the object
+     */
     public void editBookInformation(String bookTitle, String objectKey, String objectValue) {
         // Read database
         JSONArray booksData = null;
@@ -106,6 +134,100 @@ public class BooksDB {
         System.out.println("editBookInformation: book not found");
     }
 
+    /**
+     * Borrows a book from the library by updating the book's information in the database.
+     *
+     * @param bookName  the name of the book to borrow
+     * @param borrower  the name of the borrower
+     * @param duration  the duration of the borrowing in days
+     * @throws Exception if an error occurs while reading or writing to the database
+     */
+    public void borrowBook(String bookName, String borrower, String duration) throws Exception {
+        // Read the existing book data from the database
+        JSONArray booksData = null;
+        try (FileReader file = new FileReader(filePath)) {
+            JSONParser parser = new JSONParser();
+            booksData = (JSONArray) parser.parse(file);
+        } catch (IOException | ParseException error) {
+            System.out.println("An error has occurred while reading the database.");
+            return;
+        }
+
+        // Find the book with the given name
+        for (Object bookObj : booksData) {
+            JSONObject bookData = (JSONObject) bookObj;
+            String book = (String) bookData.get("book");
+            if (book.equalsIgnoreCase(bookName)) {
+                // Update the book's borrowedBy, borrowDate, and status fields
+                bookData.put("borrowedBy", borrower);
+                bookData.put("borrowDate", LocalDate.now().toString());
+                bookData.put("status", "Borrowed");
+                bookData.put("note", duration + " days");
+
+                // Write the updated book data back to the database
+                try (FileWriter file = new FileWriter(filePath)) {
+                    file.write(booksData.toJSONString());
+                    System.out.println("Book " + bookName + " has been borrowed by " + borrower + " for " + duration + ".");
+                    return;
+                } catch (IOException error) {
+                    System.out.println("An error has occurred while writing to the database.");
+                    return;
+                }
+            }
+        }
+
+        // If the book was not found
+        System.out.println("Book " + bookName + " does not exist in the database.");
+    }
+
+    /**
+     * Buys a book and adds it to the library by adding its information to the database.
+     *
+     * @param buyer   the name of the person buying the book
+     * @param book    the name of the book
+     * @throws Exception if an error occurs while reading or writing to the database
+     */
+    public void buyBook(String buyer, String book) throws Exception {
+        // Read the existing book data from the database
+        JSONArray booksData = null;
+        try (FileReader file = new FileReader(filePath)) {
+            JSONParser parser = new JSONParser();
+            booksData = (JSONArray) parser.parse(file);
+        } catch (IOException | ParseException error) {
+            System.out.println("An error has occurred while reading the database.");
+            return;
+        }
+
+        // Find the book with the given name
+        for (Object bookObj : booksData) {
+            JSONObject bookData = (JSONObject) bookObj;
+            String bookName = (String) bookData.get("book");
+            if (bookName.equalsIgnoreCase(book)) {
+                // Update the book's status and note fields
+                bookData.put("status", "Bought");
+                bookData.put("note", "Bought by " + buyer);
+
+                // Write the updated book data back to the database
+                try (FileWriter file = new FileWriter(filePath)) {
+                    file.write(booksData.toJSONString());
+                    System.out.println("Book " + book + " has been bought by " + buyer + ".");
+                    return;
+                } catch (IOException error) {
+                    System.out.println("An error has occurred while writing to the database.");
+                    return;
+                }
+            }
+        }
+
+        // If the book was not found
+        System.out.println("Book " + book + " does not exist in the database.");
+    }
+
+    /**
+     * Removes a book from the database based on the book name.
+     *
+     * @param bookName the name of the book to remove
+     */
     public void removeBook(String bookName) {
         // Check if collection exists
         System.out.println("Remove book Has been called");
@@ -141,6 +263,11 @@ public class BooksDB {
         }
     }
 
+    /**
+     * Retrieves an array of all books from the database.
+     *
+     * @return an array of BooksDB objects representing all books in the database
+     */
     public BooksDB[] getAllBooks() {
         BooksDB[] BooksArray;
 
@@ -178,7 +305,13 @@ public class BooksDB {
 
         return BooksArray;
     }
-    
+
+    /**
+     * Retrieves a book from the database based on the book title.
+     *
+     * @param bookTitle the title of the book to retrieve
+     * @return a BooksDB object representing the book, or null if the book is not found
+     */
     public BooksDB getBook(String bookTitle) {
         // Declare a variable to hold the BooksDB object corresponding to the specified book title
         BooksDB book = null;

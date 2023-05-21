@@ -23,7 +23,7 @@ public class Books {
     private JTable table_1;
     private JTable table;
 
-    public Books(JFrame mainFrame) {
+    public Books(JFrame mainFrame, String uniqueID) {
         Staff globalStaffObject = new Staff();
         BooksDB globalBooksObject = new BooksDB();
         booksPane = new JPanel();
@@ -35,17 +35,17 @@ public class Books {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = (screenSize.width) / 2;
         int screenHeight = (screenSize.height) / 2;
-        booksPane.setBounds(270, 0, screenSize.width, screenSize.height);
+        booksPane.setBounds(270, 0, screenSize.width - 250, screenSize.height);
         
         // Table
-        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status", "Action"};
+        String[] columnNames = {"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status"};
 
         // Data
         Object[][] data = getTable(globalBooksObject);
         int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
         
         JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(320, 93, 710, heightOfTable);
+        scrollPane_1.setBounds(200, 93, 710, heightOfTable);
         booksPane.add(scrollPane_1);
         
         table = new JTable(data, columnNames);
@@ -56,11 +56,10 @@ public class Books {
         
         // Call method to change color of all statuses
         setStatusColor();
-        addActionButtons();
         
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
-        optionsPanel.setBounds(1100, 90, 229, 103);
+        optionsPanel.setBounds(980, 90, 229, 103);
         booksPane.add(optionsPanel);
         optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
         
@@ -88,9 +87,17 @@ public class Books {
         refreshButton.setBackground(new Color(32, 99, 143));
         optionsPanel.add(refreshButton);
         
+        JLabel headerLabel = new JLabel("Staff - Books");
+        headerLabel.setForeground(new Color(254, 255, 255));
+        headerLabel.setFont(new Font("Dialog", Font.BOLD, 24));
+        headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        headerLabel.setVerticalAlignment(SwingConstants.CENTER);
+        headerLabel.setBounds(-120, 0, screenSize.width - 250, 39);
+        booksPane.add(headerLabel);
+        
         // When you click edit user info button
         addBooks.addActionListener(clickEvent -> {
-        	addBooks addBooksFrame = new addBooks();
+        	addBooks addBooksFrame = new addBooks(uniqueID);
         });
         
         removeBooksBtn.addActionListener(clickEvent -> {
@@ -186,32 +193,4 @@ public class Books {
             }
         });
     }
-
-    public void addActionButtons() {
-        // Get the TableColumn object for the "Status" column
-        TableColumn actionColumn = table.getColumnModel().getColumn(6);
-
-        // Define a custom cell renderer for the "Action" column
-        actionColumn.setCellRenderer(new DefaultTableCellRenderer() {
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                // Create a new button to hold the cell value
-                JButton cellButton = new JButton("Action");
-
-                // Set the background and foreground color of the cell
-                cellButton.setBackground(Color.WHITE);
-                cellButton.setForeground(Color.BLACK);
-
-                cellButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        // Display a message when the button is clicked
-                        JOptionPane.showMessageDialog(null, "Button clicked for row " + row);
-                    }
-                });
-
-                // Return the button as the cell renderer component
-                return cellButton;
-            }
-        });
-    }
-
 }

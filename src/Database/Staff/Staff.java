@@ -71,7 +71,7 @@ public class Staff {
         if (!isUsernameTaken(username))
             return;
 
-        // Decleration
+        // Declaration
         JSONArray userData = null;
 
         // Read database
@@ -79,11 +79,11 @@ public class Staff {
             JSONParser parser = new JSONParser();
             userData = (JSONArray) parser.parse(file);
         } catch (IOException | ParseException error) {
-            System.out.println("An error has occured while reading DB.");
+            System.out.println("An error has occurred while reading the DB.");
         }
 
-        // Loop over all elements of the object,
-        // and search for username object
+        // Loop over all elements of the object
+        // and search for the username object
         for (Object obj : userData) {
             JSONObject tempObject = (JSONObject) obj;
             if (tempObject.get("username").equals(username)) {
@@ -91,6 +91,13 @@ public class Staff {
             }
         }
 
+        // Write updated data back to the database
+        try (FileWriter file = new FileWriter(filePath)) {
+            file.write(userData.toJSONString());
+            file.flush();
+        } catch (IOException error) {
+            System.out.println("An error has occurred while writing to the DB.");
+        }
     }
 
     public void removeStaff(String username) {
@@ -236,4 +243,31 @@ public class Staff {
         }
         return null;
     }
+
+    public Staff getStaffByUsername(String username) {
+        // Decleration
+        JSONArray userData = null;
+
+        // Read database
+        try (FileReader file = new FileReader(filePath)) {
+            JSONParser parser = new JSONParser();
+            userData = (JSONArray) parser.parse(file);
+        } catch (IOException | ParseException error) {
+            System.out.println("An error has occured while reading DB.");
+        }
+
+
+        // Loop over all elements of the object,
+        // and search for username object
+        for (Object obj : userData) {
+            JSONObject tempObject = (JSONObject) obj;
+            if (tempObject.get("username").equals(username)) {
+                return new Staff((String) tempObject.get("username"), (String) tempObject.get("contact"),
+                        (String) tempObject.get("email"), (String) tempObject.get("age"),
+                        (String) tempObject.get("uniqueID"), (String) tempObject.get("role"));
+            }
+        }
+        return null;
+    }
+
 }

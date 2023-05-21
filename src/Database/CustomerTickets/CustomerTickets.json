@@ -1,0 +1,47 @@
+[
+    {
+        "ticketID": "665",
+        "from": "customer1@example.com",
+        "to": "support@example.com",
+        "subject": "Issue with product",
+        "customerMessage": "I'm experiencing problems with the product I purchased. It's not working as expected.",
+        "staffMessage": "",
+        "timestamp": "2023-05-16T09:30:00Z"
+    },
+    {
+        "ticketID": "223",
+        "from": "customer2@example.com",
+        "to": "support@example.com",
+        "subject": "Billing inquiry",
+        "customerMessage": "I have a question about the billing charges on my account. Can you please help me understand?",
+        "staffMessage": "",
+        "timestamp": "2023-05-16T10:15:00Z"
+    },
+    {
+        "ticketID": "112",
+        "from": "customer3@example.com",
+        "to": "support@example.com",
+        "subject": "Product return request",
+        "customerMessage": "I would like to request a return for the product I purchased. It arrived damaged.",
+        "staffMessage": "",
+        "timestamp": "2023-05-16T11:45:00Z"
+    },
+    {
+        "ticketID": "912",
+        "from": "customer1@example.com",
+        "to": "support@example.com",
+        "subject": "Order status inquiry",
+        "customerMessage": "I placed an order last week, and I haven't received any updates on the delivery status. Can you please provide an update?",
+        "staffMessage": "",
+        "timestamp": "2023-05-16T13:20:00Z"
+    },
+    {
+        "ticketID": "193",
+        "from": "customer4@example.com",
+        "to": "support@example.com",
+        "subject": "Password reset request",
+        "customerMessage": "I forgot my password and can't log in to my account. Can you please help me reset my password?",
+        "staffMessage": "",
+        "timestamp": "2023-05-16T15:10:00Z"
+    }
+]

@@ -20,14 +20,16 @@ import javax.swing.event.ListSelectionListener;
 
 import Database.BooksDB.BooksDB;
 import Database.Customers.*;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class addBooks {
     public JFrame jFrame;
-    private JTextField bookInput;
-    private JTextField authorInput;
-    private JTextField genreInput;
-    private JTextField noteInput;
-    public addBooks() {
+    public JTextField genreInput;
+    public JTextField noteInput;
+    public JTextField bookInput;
+    
+    public addBooks(String uniqueID) {
         jFrame = new JFrame();
         BooksDB globalBooksDBObject = new BooksDB();
 
@@ -58,8 +60,8 @@ public class addBooks {
         authorLabel.setForeground(new Color(254, 255, 255));
         authorLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
         mainPanel.add(authorLabel);
-        
-        authorInput = new JTextField();
+
+        JTextField authorInput = new JTextField();
         mainPanel.add(authorInput);
         authorInput.setColumns(10);
         
@@ -105,7 +107,7 @@ public class addBooks {
         		JOptionPane.showMessageDialog(panel, "Please fill in fields!");
         	} else {
         		try {
-					globalBooksDBObject.addBook(authorValue, bookValue, genreValue, bookValue, genreValue, "AVAILABLE", "N/A");
+					globalBooksDBObject.addBook(authorValue, bookValue, genreValue, bookValue, genreValue, "AVAILABLE", "N/A", uniqueID);
 					JOptionPane.showMessageDialog(panel, bookValue + " has been added.");
 				} catch (Exception error) {
 					// TODO Auto-generated catch block

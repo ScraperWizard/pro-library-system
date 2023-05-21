@@ -38,7 +38,9 @@ public class Logs {
      * @param note additional notes or comments about the action
      * @throws Exception if there was an error reading or writing to the database
      */
-    public void addLogs(String action, String by, String byRole, String on, String timestamp, String note) throws Exception {
+    public static void addLogs(String action, String by, String byRole, String on, String timestamp, String note) throws Exception {
+        final String filePath = "src/Database/Logs/logs.json";
+
         // Create a json object and append all information to it
         JSONObject logsObject = new JSONObject();
         JSONArray logsData = null;

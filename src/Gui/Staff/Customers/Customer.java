@@ -38,7 +38,7 @@ public class Customer {
         Object[][] data = getTable(globalCustomerObject);
         
         JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(320, 93, 710, data[0].length * 30);
+        scrollPane_1.setBounds(200, 93, 710, data[0].length * 30);
         customersPane.add(scrollPane_1);
         
         table_2 = new JTable(data, columnNames);
@@ -49,7 +49,7 @@ public class Customer {
         
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
-        optionsPanel.setBounds(1100, 90, 229, 103);
+        optionsPanel.setBounds(980, 90, 229, 103);
         customersPane.add(optionsPanel);
         optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
         
@@ -71,22 +71,20 @@ public class Customer {
         refreshButton.setBackground(new Color(32, 99, 143));
         optionsPanel.add(refreshButton);
         
-        JPanel panel = new JPanel();
-        optionsPanel.add(panel);
-        panel.setBackground(new Color(76, 128, 144));
-        panel.setLayout(null);
-        
-        JLabel lblNewLabel = new JLabel("CUSTOMERS");
-        lblNewLabel.setForeground(new Color(254, 255, 255));
-        lblNewLabel.setBounds(579, 6, 170, 25);
-        lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 22));
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBackground(new Color(76, 128, 144));
-        panel.add(lblNewLabel);
+        JLabel headerLabel = new JLabel("Staff - Customers");
+        headerLabel.setForeground(new Color(254, 255, 255));
+        headerLabel.setFont(new Font("Dialog", Font.BOLD, 24));
+        headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        headerLabel.setBounds(-120, 0, screenSize.width - 250, 39);
+        customersPane.add(headerLabel);
         
         // When you click edit user info button
         editUserInformationButton.addActionListener(clickEvent -> {
         	editUserInformation editFrame = new editUserInformation();
+        });
+
+        customerSupportButton.addActionListener(clickEvent -> {
+            customerSupport customerSupportFrame = new customerSupport();
         });
         
         refreshButton.addActionListener(clickEvent -> {

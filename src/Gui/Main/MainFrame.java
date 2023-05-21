@@ -12,5 +12,6 @@ public class MainFrame {
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        jFrame.setResizable(false);
     }
 }

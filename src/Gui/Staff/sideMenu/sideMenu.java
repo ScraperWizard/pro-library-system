@@ -18,10 +18,14 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import Database.Customers.Customers;
 import Database.Staff.Staff;
+import Gui.Staff.Admin.Admin;
 import Gui.Staff.Books.Books;
 import Gui.Staff.Customers.Customer;
+import Gui.Staff.Home.Home;
 import Gui.loginSelector.loginSelector;
+import Gui.staffLogin.staffLogin;
 
 public class sideMenu {
     public JPanel contentPane;
@@ -39,18 +43,25 @@ public class sideMenu {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = (screenSize.width) / 2;
         int screenHeight = (screenSize.height) / 2;
+        
+        JPanel mainContentPanel = new JPanel();
+        mainContentPanel.setBackground(new Color(57, 130, 146));
+        mainContentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+        mainContentPanel.setBounds(0, 0, 1920, 570);
+        mainContentPanel.setLayout(null);
 
         sideMenuPanel.setBackground(new Color(83, 107, 123));
-        sideMenuPanel.setBounds(0, 0, 270, 560);
-        contentPane.add(sideMenuPanel);
+        sideMenuPanel.setBounds(0, 0, 270, 570);
         sideMenuPanel.setLayout(null);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_HORIZ);
         mainFrame.setBounds(0, 150, screenSize.width, 588);
         mainFrame.setTitle("Pro Library - Staff");
+        contentPane.add(sideMenuPanel);
         
         // This will open Customer page
         Customer customersFrame = new Customer(mainFrame, uniqueID);
-        contentPane.add(customersFrame.customersPane);
+        mainContentPanel.add(customersFrame.customersPane);
+        contentPane.add(mainContentPanel);
         
         JPanel homePanel = new JPanel();
         homePanel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -107,23 +118,23 @@ public class sideMenu {
         signoutIcon_1_2.setBounds(20, 6, 40, 40);
         booksPanel.add(signoutIcon_1_2);
 
-        JPanel nullPanel = new JPanel();
-        nullPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-        nullPanel.setBackground(new Color(83, 107, 123));
-        nullPanel.setBounds(0, 360, 270, 50);
-        sideMenuPanel.add(nullPanel);
-        nullPanel.setLayout(null);
+        JPanel adminPanel = new JPanel();
+        adminPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+        adminPanel.setBackground(new Color(83, 107, 123));
+        adminPanel.setBounds(0, 360, 270, 50);
+        sideMenuPanel.add(adminPanel);
+        adminPanel.setLayout(null);
 
-        JLabel lblNull = new JLabel("ADMIN");
-        lblNull.setForeground(new Color(254, 255, 255));
-        lblNull.setFont(new Font("Dialog", Font.BOLD, 18));
-        lblNull.setBounds(90, 6, 104, 34);
-        nullPanel.add(lblNull);
+        JLabel lblAdmin = new JLabel("ADMIN");
+        lblAdmin.setForeground(new Color(254, 255, 255));
+        lblAdmin.setFont(new Font("Dialog", Font.BOLD, 18));
+        lblAdmin.setBounds(90, 6, 104, 34);
+        adminPanel.add(lblAdmin);
 
         JLabel signoutIcon_1_4 = new JLabel("");
         signoutIcon_1_4.setIcon(new ImageIcon(sideMenu.class.getResource("/Gui/images/admin.png")));
         signoutIcon_1_4.setBounds(20, 6, 40, 40);
-        nullPanel.add(signoutIcon_1_4);
+        adminPanel.add(signoutIcon_1_4);
 
         JPanel settingsPanel = new JPanel();
         settingsPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -165,11 +176,11 @@ public class sideMenu {
         infoPanel.setLayout(null);
         infoPanel.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
         infoPanel.setBackground(new Color(83, 107, 123));
-        infoPanel.setBounds(0, 510, 270, 50);
+        infoPanel.setBounds(0, 510, 270, 60);
         sideMenuPanel.add(infoPanel);
 
         JLabel lblNewLabel_2 = new JLabel(currentUser.role + ": " + currentUser.username);
-        lblNewLabel_2.setBounds(20, 16, 270, 16);
+        lblNewLabel_2.setBounds(20, 24, 270, 16);
         infoPanel.add(lblNewLabel_2);
         lblNewLabel_2.setForeground(new Color(254, 255, 255));
         lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -192,13 +203,32 @@ public class sideMenu {
             @Override
             public void mouseClicked(MouseEvent event) {
             	Component optionClicked = event.getComponent();
-            	if(optionClicked == booksPanel) {
-            		customersFrame.customersPane.setVisible(false);
-                    Books booksFrame = new Books(mainFrame);
-                    contentPane.add(booksFrame.booksPane);
+
+                // Delete everything inside the panel
+                mainContentPanel.removeAll();
+                mainContentPanel.repaint();
+                mainContentPanel.revalidate();
+
+                // Add the appropiate panel
+                if(optionClicked == homePanel) {
+                    Home homeFrame = new Home(mainFrame);
+                    mainContentPanel.add(homeFrame.homePane);
+                } else if(optionClicked == booksPanel) {
+                    Books booksFrame = new Books(mainFrame, uniqueID);
+                    mainContentPanel.add(booksFrame.booksPane);
             	} else if(optionClicked == customersPanel) {
-            		
-            	}
+                    Customer customersFrame = new Customer(mainFrame, uniqueID);
+                    mainContentPanel.add(customersFrame.customersPane);
+            	} else if(optionClicked == adminPanel) {
+                    Admin adminFrame = new Admin(mainFrame, uniqueID);
+                    mainContentPanel.add(adminFrame.adminPane);
+                } else if(optionClicked == signOutPanel) {
+                    staffLogin staffLoginFrame = new staffLogin(mainFrame);
+                    mainFrame.setContentPane(staffLoginFrame.contentPane);
+                }
+
+                mainContentPanel.repaint();
+                contentPane.repaint();
             }
 
             @Override
@@ -222,7 +252,7 @@ public class sideMenu {
         customersPanel.addMouseListener(panelMouseEventHandler);
         settingsPanel.addMouseListener(panelMouseEventHandler);
         booksPanel.addMouseListener(panelMouseEventHandler);
-        nullPanel.addMouseListener(panelMouseEventHandler);
+        adminPanel.addMouseListener(panelMouseEventHandler);
 
     }
 
