@@ -5,16 +5,14 @@ import javax.swing.*;
 import javax.swing.border.*;
 import Database.Customers.Customers;
 import Database.Maintenance.Maintenance;
-import Gui.Customers.sideMenu.sideMenuCustomer;
+import Gui.Customers.sideMenu.sideMenu;
 import Gui.loginSelector.loginSelector;
 import Gui.register.Register;
-import com.sun.tools.javac.Main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.GroupLayout.Alignment;
 
 public class Login {
 	public JPanel contentPane;
@@ -157,7 +155,7 @@ public class Login {
 					inValidateLogin(validLogin, "Service is under maintenance! Come back later", "null", "Maintenance mode");
 				} else {
 					contentPane.setVisible(false);
-					sideMenuCustomer customerService = new sideMenuCustomer(mainFrame);
+					sideMenu customerService = new sideMenu(mainFrame, username);
 					mainFrame.setContentPane(customerService.contentPane);
 				}
 			} else {
