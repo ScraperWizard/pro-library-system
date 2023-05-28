@@ -97,8 +97,8 @@ public class RequestBook extends JFrame {
         		JOptionPane.showMessageDialog(panel, "Please enter a book name!");
         	} else {
                 try {
-                    globalTicketsObject.addTicket("Customer", "Staff", "Book request", "I would like to request this book, please add it " + bookName, "", actualTimestamp);
-                    JOptionPane.showMessageDialog(panel, bookName + " has been requested, the book might be added to our library in the next 5 working days.");
+//                    String ticketID = globalTicketsObject.addTicket(, "Staff", "Book request", "I would like to request this book, please add it " + bookName);
+//                    JOptionPane.showMessageDialog(panel, bookName + " has been requested, the book might be added to our library in the next 5 working days.");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }

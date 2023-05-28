@@ -14,8 +14,11 @@ import java.awt.event.MouseEvent;
 
 public class Customer {
     public JPanel customersPane;
-    private JTable table_1;
     private JTable table_2;
+    private JTextField subjectInput;
+    private JTextField fromInput;
+    private JTextField messageInput;
+    private JTextField replyInput;
 
     public Customer(JFrame mainFrame, String uniqueID) {
         Staff globalStaffObject = new Staff();
@@ -77,6 +80,7 @@ public class Customer {
         headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
         headerLabel.setBounds(-120, 0, screenSize.width - 250, 39);
         customersPane.add(headerLabel);
+
         
         // When you click edit user info button
         editUserInformationButton.addActionListener(clickEvent -> {

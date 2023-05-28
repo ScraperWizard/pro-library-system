@@ -5,34 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="Abdulrahman - Added new features">
-      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/HelpDesk/HelpDesk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/Home/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/MyBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/Settings/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/Settings/changePassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Announcements/Announcements.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/BooksDB/BooksDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/CustomerTickets/CustomerTickets.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Maintenance/Maintenance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/HelpDesk/customerSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/HelpDesk/newRequestPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Customers/Home/CustomerAnnouncement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Staff/Customers/customerSupportAllMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Database/Customers/Customers.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Database/Staff/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Staff/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Database/Staff/Staff.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Staff/Staff.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/Main/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Main/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logs.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Logs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Announcements/Announcements.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Announcements/Announcements.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/BooksDB/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/BooksDB/Books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Customers/Customers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Logs/logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Logs/logs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Announcements/Announcements.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Announcements/Announcements.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/BooksDB/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/BooksDB/Books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Staff/Staff.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Staff/Staff.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/HelpDesk/HelpDesk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/HelpDesk/HelpDesk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Library/RequestBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Library/RequestBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Admin/announcements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Admin/announcements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/customerSupport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Home/announcements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Home/announcements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Customers/Customers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/Logs/logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Logs/logs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Books/CustomersList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Library/BorrowABook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Library/BorrowBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/Library/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Library/BuyABook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/Staff/Staff.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Staff/Staff.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/HelpDesk/HelpDesk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/HelpDesk/HelpDesk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/Home/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Library/RequestBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/Library/RequestBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenuCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Admin/announcements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Admin/announcements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Customers/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Customers/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Customers/customerSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Customers/customerSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Home/announcements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Home/announcements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/sideMenu/sideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/sideMenu/sideMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +171,7 @@
       <workItem from="1684309220076" duration="2984000" />
       <workItem from="1684400333937" duration="5823000" />
       <workItem from="1684647300785" duration="27636000" />
-      <workItem from="1684816682911" duration="6066000" />
+      <workItem from="1684816682911" duration="33813000" />
     </task>
     <task id="LOCAL-00001" summary="make it better">
       <created>1682701518613</created>
@@ -246,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684675052292</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Abdulrahman - Added new features">
+      <created>1684833238424</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684833238424</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

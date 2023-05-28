@@ -36,7 +36,8 @@ public class sideMenu {
     private final JPanel sideMenuPanel = new JPanel();
 
     public sideMenu(JFrame mainFrame, String username) {
-        Staff globalStaffObject = new Staff();
+        Customers globalCustomersObject = new Customers();
+        Customers currentUser = globalCustomersObject.getUser(username);
         contentPane = new JPanel();
         contentPane.setBackground(new Color(57, 130, 146));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -184,6 +185,13 @@ public class sideMenu {
         infoPanel.setBackground(new Color(83, 107, 123));
         infoPanel.setBounds(0, 510, 270, 60);
         sideMenuPanel.add(infoPanel);
+        
+        JLabel emailLabel = new JLabel(currentUser.email);
+        emailLabel.setFont(new Font("Dialog", Font.BOLD, 14));
+        emailLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        emailLabel.setForeground(new Color(254, 255, 255));
+        emailLabel.setBounds(0, 0, 270, 50);
+        infoPanel.add(emailLabel);
 
         JPanel logoPanel = new JPanel();
         logoPanel.setLayout(null);
@@ -217,7 +225,7 @@ public class sideMenu {
                     MyBooks myBooksFrame = new MyBooks(mainFrame);
                     mainContentPanel.add(myBooksFrame.myBooksPane);
                 } else if(optionClicked == customerServicePanel) {
-                    HelpDesk helpDeskFrame = new HelpDesk(mainFrame);
+                    HelpDesk helpDeskFrame = new HelpDesk(mainFrame, username);
                     mainContentPanel.add(helpDeskFrame.helpDeskPane);
                 } else if(optionClicked == libraryPanel) {
                     Library libraryFrame = new Library(mainFrame);

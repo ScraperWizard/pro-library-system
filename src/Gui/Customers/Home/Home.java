@@ -35,6 +35,28 @@ public class Home {
         headerLabel.setVerticalAlignment(SwingConstants.CENTER);
         headerLabel.setBounds(-120, 0, screenSize.width - 250, 39);
         homePane.add(headerLabel);
+
+        JLabel mailIcon = new JLabel("");
+        mailIcon.setIcon(new ImageIcon(sideMenu.class.getResource("/Gui/images/mail.png")));
+        mailIcon.setBounds(1270, 63, 40, 40);
+        homePane.add(mailIcon);
+
+        mailIcon.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                mailIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                mailIcon.setCursor(Cursor.getDefaultCursor());
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new CustomerAnnouncement();
+            }
+        });
     }
 }
 

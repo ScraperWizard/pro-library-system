@@ -26,6 +26,7 @@ import Gui.Staff.Customers.Customer;
 import Gui.Staff.Home.Home;
 import Gui.loginSelector.loginSelector;
 import Gui.staffLogin.staffLogin;
+import java.awt.GridLayout;
 
 public class sideMenu {
     public JPanel contentPane;
@@ -173,14 +174,14 @@ public class sideMenu {
         signOutPanel.add(lblSignOut);
 
         JPanel infoPanel = new JPanel();
-        infoPanel.setLayout(null);
         infoPanel.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
         infoPanel.setBackground(new Color(83, 107, 123));
         infoPanel.setBounds(0, 510, 270, 60);
         sideMenuPanel.add(infoPanel);
+        infoPanel.setLayout(null);
 
         JLabel lblNewLabel_2 = new JLabel(currentUser.role + ": " + currentUser.username);
-        lblNewLabel_2.setBounds(20, 24, 270, 16);
+        lblNewLabel_2.setBounds(5, 1, 268, 50);
         infoPanel.add(lblNewLabel_2);
         lblNewLabel_2.setForeground(new Color(254, 255, 255));
         lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
