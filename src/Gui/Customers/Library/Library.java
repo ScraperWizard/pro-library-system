@@ -5,14 +5,16 @@ import Database.Staff.Staff;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 
 public class Library {
     public JPanel libraryPanel;
     private JTable table;
 
-    public Library(JFrame mainFrame) {
+    public Library(JFrame mainFrame, String username) {
         Staff globalStaffObject = new Staff();
         BooksDB globalBooksObject = new BooksDB();
         libraryPanel = new JPanel();
@@ -42,7 +44,7 @@ public class Library {
         int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(30, 92, 710, heightOfTable);
+        scrollPane.setBounds(188, 93, 710, heightOfTable);
         libraryPanel.add(scrollPane);
 
         table = new JTable(data, columnNames);
@@ -57,7 +59,7 @@ public class Library {
         // Options panel and all buttons inside of them
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
-        optionsPanel.setBounds(750, 90, 229, 103);
+        optionsPanel.setBounds(908, 91, 229, 103);
         optionsPanel.setVisible(true);
         libraryPanel.add(optionsPanel);
         optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
@@ -90,12 +92,19 @@ public class Library {
         });
 
         requestButton.addActionListener(clickEvent -> {
-            new RequestBook();
+            new RequestBook(username);
         });
 
         refreshButton.addActionListener(clickEvent -> {
             refreshTable(table, libraryPanel, globalBooksObject, scrollPane);
         });
+
+        getBook.addActionListener(clickEvent -> {
+            new GetABook(username);
+        });
+
+        // Apply colors
+        setStatusColor();
     }
 
     public Object[][] getTableBooks(BooksDB globalBooksObject) {
@@ -121,7 +130,7 @@ public class Library {
 
         // Adjust length of table
         int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
-        scrollPanel.setBounds(320, 93, 710, heightOfTable);
+        scrollPanel.setBounds(188, 93, 710, heightOfTable);
 
         // create a new table model with the updated data
         DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[]{"Author", "Book", "Genre", "Borrowed By", "Borrow date", "Status"});
@@ -138,5 +147,33 @@ public class Library {
     }
 
     public void setStatusColor() {
+        // Get the TableColumn object for the "Status" column
+        TableColumn statusColumn = table.getColumnModel().getColumn(5);
+
+        // Define a custom cell renderer for the "Status" column
+        statusColumn.setCellRenderer(new DefaultTableCellRenderer() {
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                // Create a new label to hold the cell value
+                JLabel cellLabel = new JLabel();
+
+                // Get the value of the "Status" column for this cell
+                String status = (String) value;
+
+                // Set the background and foreground color of the cell based on the status value
+                if (status.equals("AVAILABLE")) {
+                    cellLabel.setForeground(Color.GREEN);
+                } else if (status.equals("SOLD")) {
+                    cellLabel.setForeground(Color.RED);
+                } else if(status.equals("BORROWED")) {
+                    cellLabel.setForeground(Color.YELLOW);
+                }
+
+                // Set the text of the label to the value of the "Status" column for this cell
+                cellLabel.setText(status);
+
+                // Return the label as the cell renderer component
+                return cellLabel;
+            }
+        });
     }
 }

@@ -22,8 +22,10 @@ public class RequestBook extends JFrame {
     private JTable table;
 
 
-    public RequestBook() {
+    public RequestBook(String username) {
         CustomerTickets globalTicketsObject = new CustomerTickets();
+        Customers globalCustomersObject = new Customers();
+        Customers currentUser = globalCustomersObject.getUser(username);
 
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -97,8 +99,9 @@ public class RequestBook extends JFrame {
         		JOptionPane.showMessageDialog(panel, "Please enter a book name!");
         	} else {
                 try {
-//                    String ticketID = globalTicketsObject.addTicket(, "Staff", "Book request", "I would like to request this book, please add it " + bookName);
-//                    JOptionPane.showMessageDialog(panel, bookName + " has been requested, the book might be added to our library in the next 5 working days.");
+                    String ticketID = globalTicketsObject.addTicket("Customers", "Staff", "Book request - " + bookName);
+                    globalTicketsObject.addMessageToTicket(ticketID, currentUser.email, bookName + " Note: " + note);
+                    JOptionPane.showMessageDialog(panel, bookName + " has been requested, the book might be added to our library in the next 5 working days.");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }

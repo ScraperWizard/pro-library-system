@@ -29,7 +29,7 @@ public class addBooks {
     public JTextField noteInput;
     public JTextField bookInput;
     
-    public addBooks(String uniqueID) {
+    public addBooks(String uniqueID, String bookName) {
         jFrame = new JFrame();
         BooksDB globalBooksDBObject = new BooksDB();
 
@@ -73,6 +73,7 @@ public class addBooks {
         bookInput = new JTextField();
         mainPanel.add(bookInput);
         bookInput.setColumns(10);
+        bookInput.setText(bookName);
         
         JLabel genreLabel = new JLabel("Genre");
         genreLabel.setForeground(new Color(254, 255, 255));
@@ -117,6 +118,10 @@ public class addBooks {
         	}
         });
        
+    }
+
+    public addBooks(String uniqueID) {
+        new addBooks(uniqueID, "");
     }
    
 }

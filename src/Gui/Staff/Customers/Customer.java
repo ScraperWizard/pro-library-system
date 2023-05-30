@@ -88,7 +88,7 @@ public class Customer {
         });
 
         customerSupportButton.addActionListener(clickEvent -> {
-            customerSupport customerSupportFrame = new customerSupport();
+            customerSupport customerSupportFrame = new customerSupport(uniqueID);
         });
         
         refreshButton.addActionListener(clickEvent -> {

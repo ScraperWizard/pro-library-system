@@ -28,10 +28,15 @@ public class Login {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(new Color(57, 130, 146));
 
-		// Get screen size
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int screenWidth = (screenSize.width) / 2;
-		int screenHeight = (screenSize.height) / 2;
+        // Get screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        int frameWidth = 500;
+        int frameHeight = 520;
+        int frameX = (screenWidth - frameWidth) / 2;
+        int frameY = (screenHeight - frameHeight) / 2;
+		mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
 
 		MouseAdapter panelMouseEventHandler = new MouseAdapter() {
 			@Override
@@ -55,21 +60,12 @@ public class Login {
 				event.getComponent().setCursor(Cursor.getDefaultCursor());
 			}
 		};
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{100, 613, 303, 0};
-		gbl_contentPane.rowHeights = new int[]{20, 237, 300, 0};
-		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		contentPane.setLayout(gbl_contentPane);
+		contentPane.setLayout(null);
 
 		JButton returnButton = new JButton("< Return");
+		returnButton.setBounds(5, 5, 99, 29);
 		returnButton.setForeground(new Color(255, 0, 0));
-		GridBagConstraints gbc_returnButton = new GridBagConstraints();
-		gbc_returnButton.fill = GridBagConstraints.BOTH;
-		gbc_returnButton.insets = new Insets(0, 0, 5, 5);
-		gbc_returnButton.gridx = 0;
-		gbc_returnButton.gridy = 0;
-		contentPane.add(returnButton, gbc_returnButton);
+		contentPane.add(returnButton);
 
 		returnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent clickEvent) {
@@ -80,6 +76,7 @@ public class Login {
 		});
 
 		JPanel loginPanel = new JPanel();
+		loginPanel.setBounds(98, 50, 303, 430);
 		loginPanel.setBackground(new Color(57, 130, 146));
 		loginPanel.setLayout(new GridLayout(0, 1, 0, 0));
 
@@ -134,11 +131,7 @@ public class Login {
 		loginPanel.add(registerNowLbl);
 		registerNowLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		registerNowLbl.setForeground(Color.WHITE);
-		GridBagConstraints gbc_loginPanel = new GridBagConstraints();
-		gbc_loginPanel.fill = GridBagConstraints.BOTH;
-		gbc_loginPanel.gridx = 2;
-		gbc_loginPanel.gridy = 2;
-		contentPane.add(loginPanel, gbc_loginPanel);
+		contentPane.add(loginPanel);
 		registerNowLbl.addMouseListener(panelMouseEventHandler);
 
 		customerLoginButton.addActionListener(clickEvent -> {

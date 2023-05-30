@@ -29,17 +29,22 @@ public class staffLogin {
 
         // Get screen size
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = (screenSize.width) / 2;
-        int screenHeight = (screenSize.height) / 2;
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        int frameWidth = 500;
+        int frameHeight = 400;
+        int frameX = (screenWidth - frameWidth) / 2;
+        int frameY = (screenHeight - frameHeight) / 2;
 
         // Staff login button
         JButton returnButton = new JButton("< Return");
         returnButton.setForeground(new Color(255, 0, 0));
         returnButton.setBounds(5, 5, 100, 20);
         contentPane.add(returnButton);
+        mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
 
         JPanel staffLoginPanel = new JPanel();
-        staffLoginPanel.setBounds(718, 262, 303, 214);
+        staffLoginPanel.setBounds((frameWidth - 303) / 2, 50, 303, 253);
         staffLoginPanel.setBackground(new Color(57, 130, 146));
         staffLoginPanel.setForeground(new Color(57, 130, 146));
         contentPane.add(staffLoginPanel);

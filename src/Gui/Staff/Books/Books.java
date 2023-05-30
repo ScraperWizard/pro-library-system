@@ -59,7 +59,7 @@ public class Books {
         
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
-        optionsPanel.setBounds(980, 90, 229, 103);
+        optionsPanel.setBounds(980, 90, 229, 140);
         booksPane.add(optionsPanel);
         optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
         
@@ -74,6 +74,12 @@ public class Books {
         removeBooksBtn.setFont(new Font("Dialog", Font.BOLD, 14));
         removeBooksBtn.setForeground(new Color(32, 99, 143));
         optionsPanel.add(removeBooksBtn);
+        
+        JButton viewBooksBtn = new JButton("View book");
+        viewBooksBtn.setForeground(new Color(32, 99, 143));
+        viewBooksBtn.setFont(new Font("Dialog", Font.BOLD, 14));
+        viewBooksBtn.setBackground(new Color(32, 99, 143));
+        optionsPanel.add(viewBooksBtn);
         
         JButton editBooksBtn = new JButton("Edit book");
         editBooksBtn.setForeground(new Color(32, 99, 143));
@@ -102,6 +108,10 @@ public class Books {
         
         removeBooksBtn.addActionListener(clickEvent -> {
         	removeBook removeBooksFrame = new removeBook();
+        });
+
+        viewBooksBtn.addActionListener(clickEvent -> {
+            new viewBook();
         });
         
         editBooksBtn.addActionListener(clickEvent -> {

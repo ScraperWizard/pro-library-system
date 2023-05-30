@@ -26,27 +26,27 @@ public class loginSelector {
 
         // Get screen size
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = (screenSize.width) / 2;
-        int screenHeight = (screenSize.height) / 2;
-        
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        int frameWidth = 500;
+        int frameHeight = 400;
+        int frameX = (screenWidth - frameWidth) / 2;
+        int frameY = (screenHeight - frameHeight) / 2;
+
+        mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
+        mainFrame.setTitle("Pro Library - Staff");
+
+
         LineBorder line = new LineBorder(new Color(87, 105, 120), 4, true);
-        GridBagLayout gbl_contentPane = new GridBagLayout();
-        gbl_contentPane.columnWidths = new int[]{718, 303, 0, 0};
-        gbl_contentPane.rowHeights = new int[]{262, 253, 0, 0};
-        gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-        gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-        contentPane.setLayout(gbl_contentPane);
-         
+         contentPane.setLayout(null);
+
          // Middle panel
          JPanel loginSelectorPanel = new JPanel();
+         loginSelectorPanel.setBounds((frameWidth - 303) / 2, 50, 303, 253);
          loginSelectorPanel.setBackground(new Color(57, 130, 146));
          loginSelectorPanel.setForeground(new Color(57, 130, 146));
          loginSelectorPanel.setBorder(null);
-         GridBagConstraints gbc_loginSelectorPanel = new GridBagConstraints();
-         gbc_loginSelectorPanel.fill = GridBagConstraints.BOTH;
-         gbc_loginSelectorPanel.gridx = 1;
-         gbc_loginSelectorPanel.gridy = 1;
-         contentPane.add(loginSelectorPanel, gbc_loginSelectorPanel);
+         contentPane.add(loginSelectorPanel);
          loginSelectorPanel.setLayout(new GridLayout(0, 1, 0, 0));
          
          // Staff login heading

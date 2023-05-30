@@ -22,6 +22,8 @@ import javax.swing.event.ListSelectionListener;
 import Database.CustomerTickets.CustomerTickets;
 import Database.CustomerTickets.Message;
 import Database.Customers.*;
+import Gui.Staff.Books.addBooks;
+
 import javax.swing.JTextArea;
 
 public class customerSupport {
@@ -29,7 +31,7 @@ public class customerSupport {
     private JTextField subjectInput;
     private JTextField fromInput;
     private JTextField replyInput;
-    public customerSupport() {
+    public customerSupport(String uniqueID) {
         jFrame = new JFrame();
         Customers globalCustomersObject = new Customers();
         CustomerTickets globalCustomerTicketsObject = new CustomerTickets();
@@ -60,6 +62,12 @@ public class customerSupport {
         viewMessages.setForeground(new Color(255, 146, 0));
         viewMessages.setBounds(689, 235, 158, 29);
         panel.add(viewMessages);
+        
+        JButton addBookBtn = new JButton("Add book");
+        addBookBtn.setForeground(new Color(147, 32, 146));
+        addBookBtn.setBounds(689, 170, 158, 29);
+        panel.add(addBookBtn);
+        addBookBtn.setVisible(false);
         
         JButton refreshBtn = new JButton("Refresh");
         refreshBtn.setBounds(20, 440, 134, 35);
@@ -170,6 +178,22 @@ public class customerSupport {
                         messageInput.setText("Null");
                         System.out.println("No messages found.");
                     }
+
+                    // Check if its a book request
+                    if(currentTicket.subject.split(" - ")[0].equals("Book request")) {
+                        messageInput.setText(currentTicket.messages.get(0).getMessage());
+                        addBookBtn.setVisible(true);
+                        viewMessages.setVisible(false);
+                        replyLabel.setText("");
+                        mainPanel.remove(replyInput);
+                        mainPanel.remove(replyButton);
+                    } else {
+                        replyLabel.setText("Reply to customer:");
+                        mainPanel.add(replyInput);
+                        mainPanel.add(replyButton);
+                        addBookBtn.setVisible(false);
+                        viewMessages.setVisible(true);
+                    }
                 }
             }
         });
@@ -213,6 +237,11 @@ public class customerSupport {
 
         refreshBtn.addActionListener(clickEvent -> {
             setModel(globalCustomerTicketsObject, ticketsList);
+        });
+
+        addBookBtn.addActionListener(clickEvent -> {
+            List<CustomerTickets> currentTicket = globalCustomerTicketsObject.getTickets(ticketsList.getSelectedValue().split("#")[1].split(" - ")[0], null);
+            new addBooks(uniqueID, currentTicket.get(0).subject.split(" - ")[1]);
         });
 
     }
