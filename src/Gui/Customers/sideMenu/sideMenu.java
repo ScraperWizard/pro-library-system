@@ -222,7 +222,7 @@ public class sideMenu {
                     Home homeFrame = new Home(mainFrame, username);
                     mainContentPanel.add(homeFrame.homePane);
                 } else if(optionClicked == myBooksPanel) {
-                    MyBooks myBooksFrame = new MyBooks(mainFrame);
+                    MyBooks myBooksFrame = new MyBooks(mainFrame, username);
                     mainContentPanel.add(myBooksFrame.myBooksPane);
                 } else if(optionClicked == customerServicePanel) {
                     HelpDesk helpDeskFrame = new HelpDesk(mainFrame, username);

@@ -14,7 +14,6 @@ public class Main {
 				} catch (Exception error) {
 					error.printStackTrace();
 				}
-
 			}
 		});
 	}

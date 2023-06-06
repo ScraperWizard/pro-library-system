@@ -20,7 +20,11 @@ public class ExtendDate extends JFrame {
     private JTextField extendInput;
     BooksDB[] allBooks;
 
-    public ExtendDate() {
+    public ExtendDate(String username) {
+        CustomerTickets sendTicket = new CustomerTickets();
+        Customers customer = new Customers();
+        Customers currentUser = customer.getUser(username);
+
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -64,43 +68,46 @@ public class ExtendDate extends JFrame {
         JButton extendbtn = new JButton("Send");
         extendbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String selectedOption = booksList.getSelectedValue();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                if (extendInput.getText().isEmpty()) {
-                    // Handle case when input text field is empty
-                    System.out.println("Input text field is empty");
-                } else {
-                    String borrowDate = null;
-                    BooksDB[] allBooks;
-                    allBooks = allBookss;
-                    for (BooksDB book : allBooks) {
-                        if (book.book.equals(selectedOption)) {
-                            borrowDate = book.borrowDate;
-                            break;
-                        }
-                    }
-                    if (borrowDate != null) {
-                        try {
-                            int extraDays = Integer.parseInt(extendInput.getText());
-                            LocalDate borrowDateParsed = LocalDate.parse(borrowDate, formatter);
-                            LocalDate extendedDate = borrowDateParsed.plusDays(extraDays);
-                            try {
-//                                ticket.addTicket(globalCustomerObject.email, "Staff", "Extend due date",
-//                                        selectedOption + ", " + extendInput.getText() + " Days", null,
-//                                        extendedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-                            } catch (Exception e1) {
-                                e1.getMessage();
+                ArrayList<String> selectedBooks = new ArrayList<>();
+                String extendInputValue = extendInput.getText();
+
+                selectedBooks.addAll(booksList.getSelectedValuesList());
+
+                if (!selectedBooks.isEmpty()) {
+                    if (!extendInputValue.isEmpty()) {
+                        if (extendInputValue.matches("\\d+")) {
+                            int extraDays = Integer.parseInt(extendInputValue);
+                            for (String bookName : selectedBooks) {
+                                String ticketID;
+                                try {
+                                    ticketID = sendTicket.addTicket(currentUser.email, "Staff", "Extend due date");
+
+                                    try {
+                                        sendTicket.addMessageToTicket(ticketID, currentUser.email, "Extend date for " + extraDays + " days. " + "Book: " + bookName + " Note: " + "");
+                                    } catch (Exception e1) {
+                                        // TODO Auto-generated catch block
+                                        e1.printStackTrace();
+                                    }
+                                } catch (Exception e2) {
+                                    // TODO Auto-generated catch block
+                                    e2.printStackTrace();
+                                }
                             }
-                        } catch (Exception ex) {
-                            // Handle case when input text cannot be parsed as an integer
-                            System.out.println("Error: " + ex);
+
+                            JOptionPane.showMessageDialog(panel, "The request to extend the due date of selected books has been made. The return dates might be extended in the following days.");
+                        } else {
+                            JOptionPane.showMessageDialog(panel, "Invalid input for extending the return date. Please enter a valid number of days.");
                         }
                     } else {
-                        System.out.println("Selected book not found.");
+                        JOptionPane.showMessageDialog(panel, "Please choose how long the return date should be extended.");
                     }
+                } else {
+                    JOptionPane.showMessageDialog(panel, "Please select at least one book.");
                 }
             }
         });
+
+
 
         extendbtn.setBounds(130, 228, 156, 23);
         panel.add(extendbtn);

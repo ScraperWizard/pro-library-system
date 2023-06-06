@@ -34,7 +34,7 @@ public class loginSelector {
         int frameY = (screenHeight - frameHeight) / 2;
 
         mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
-        mainFrame.setTitle("Pro Library - Staff");
+        mainFrame.setTitle("Pro Library - Welcome!");
 
 
         LineBorder line = new LineBorder(new Color(87, 105, 120), 4, true);

@@ -1,6 +1,7 @@
 package Gui.Customers.MyBooks;
 
 import Database.BooksDB.BooksDB;
+import Gui.Staff.Books.readBook;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +19,7 @@ public class MyBooks {
     public JPanel myBooksPane;
     public JTable table;
 
-    public MyBooks(JFrame mainFrame) {
+    public MyBooks(JFrame mainFrame, String username) {
         BooksDB globalBooksObject = new BooksDB();
         myBooksPane = new JPanel();
         myBooksPane.setBackground(new Color(76, 128, 144));
@@ -42,7 +43,7 @@ public class MyBooks {
         // Options panel and all buttons inside of them
         JPanel optionsPanel = new JPanel();
         optionsPanel.setBackground(new Color(76, 128, 144));
-        optionsPanel.setBounds(750, 90, 229, 103);
+        optionsPanel.setBounds(908, 91, 229, 116);
         optionsPanel.setVisible(true);
         myBooksPane.add(optionsPanel);
         optionsPanel.setLayout(new GridLayout(0, 1, 0, 0));
@@ -66,20 +67,25 @@ public class MyBooks {
         String[] columnNames = {"Author", "Book", "Genre", "status","Return Date","Days left"};
 
         // Get table data
-        Object[][] data = getTableBooks(globalBooksObject);
-        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
+        Object[][] data = getTableBooks(globalBooksObject, username);
+        System.out.println(data.length);
+        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 34;
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(30, 92, 710, heightOfTable);
+        scrollPane.setBounds(200, 92, 710, heightOfTable);
         myBooksPane.add(scrollPane);
+        
+                JButton readBook = new JButton("Read a book");
+                optionsPanel.add(readBook);
+                readBook.setForeground(new Color(32, 99, 143));
+                readBook.setFont(new Font("Dialog", Font.BOLD, 14));
+                readBook.setBackground(Color.WHITE);
 
         JButton refreshbtn = new JButton("Refresh");
         refreshbtn.setForeground(new Color(32, 99, 143));
         refreshbtn.setFont(new Font("Dialog", Font.BOLD, 14));
         refreshbtn.setBackground(Color.WHITE);
         optionsPanel.add(refreshbtn);
-
-
 
         table = new JTable(data, columnNames);
         table.setShowGrid(false);
@@ -88,33 +94,36 @@ public class MyBooks {
         table.setBounds(screenWidth - 200, screenHeight - 100, screenWidth, heightOfTable);
         scrollPane.setViewportView(table);
 
-        // doesn't work
         refreshbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                refreshTable(table, myBooksPane, globalBooksObject, scrollPane);
+                refreshTable(table, myBooksPane, globalBooksObject, scrollPane, username);
             }
         });
 
         // Button click handlers
         returnBook.addActionListener(clickEvent -> {
-            new ReturnBooks();
+            new ReturnBooks(username);
         });
 
         extendDate.addActionListener(clickEvent -> {
-            new ExtendDate();
+            new ExtendDate(username);
+        });
+
+        readBook.addActionListener(clickEvent -> {
+            new readBook(username);
         });
 
         setStatusColor();
         setDaysLeftColor();
 
     }
-    public Object[][] getTableBooks(BooksDB globalBooksObject) {
+    public Object[][] getTableBooks(BooksDB globalBooksObject, String username) {
         BooksDB[] allBooks = globalBooksObject.getAllBooks();
 
         // Count the number of "Borrowed" and "Sold" books
         int count = 0;
         for (BooksDB book : allBooks) {
-            if (book.status.equals("BORROWED") || book.status.equals("SOLD")) {
+            if ((book.status.equals("BORROWED") || book.status.equals("SOLD")) && book.borrowedBy.equals(username)) {
                 count++;
             }
         }
@@ -125,7 +134,8 @@ public class MyBooks {
         // Iterate over the books and add the "Borrowed" and "Sold" books to the data array
         int index = 0;
         for (BooksDB book : allBooks) {
-            if (book.status.equals("BORROWED") || book.status.equals("SOLD")) {
+            if ((book.status.equals("BORROWED") || book.status.equals("SOLD")) && book.borrowedBy.equals(username)) {
+                System.out.println(book.book);
                 data[index][0] = book.author;
                 data[index][1] = book.book;
                 data[index][2] = book.genre;
@@ -134,11 +144,11 @@ public class MyBooks {
 
                 // Calculate days left
                 long daysLeft = 0;
-                if(!book.borrowDate.equals("")) {
+                if (!book.borrowDate.equals("")) {
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate borrowDate = LocalDate.parse(book.borrowDate, formatter);
+                    LocalDate returnDate = LocalDate.parse(book.borrowDate, formatter);
                     LocalDate currentDate = LocalDate.now();
-                    daysLeft = ChronoUnit.DAYS.between(currentDate, borrowDate.plusDays(30)); // Assuming a 30-day borrowing period
+                    daysLeft = ChronoUnit.DAYS.between(currentDate, returnDate); // Calculate difference between current date and return date
                 }
                 data[index][5] = String.valueOf(daysLeft);
                 index++;
@@ -147,26 +157,27 @@ public class MyBooks {
         return data;
     }
 
-    public void refreshTable(JTable table, JPanel panel, BooksDB globalBooksObject, JScrollPane scrollPanel) {
+    public void refreshTable(JTable table, JPanel panel, BooksDB globalBooksObject, JScrollPane scrollPanel, String username) {
         // get the updated data for the table
-        Object[][] data = getTableBooks(globalBooksObject);
+        Object[][] data = getTableBooks(globalBooksObject, username);
 
         // Adjust length of table
-        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 21;
-        scrollPanel.setBounds(320, 93, 710, heightOfTable);
+        int heightOfTable = (data.length * 21) > 240 ? 240 : data.length * 32;
+        scrollPanel.setBounds(200, 92, 710, heightOfTable);
 
         // create a new table model with the updated data
-        DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[]{"Author", "Book", "Genre", "status","Return Date","Days left"});
+        DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[]{"Author", "Book", "Genre", "Status", "Borrow date", "Days left"});
         table.setModel(newTableModel);
-
-        // Set the cell renderer for the "Status" column
-        setStatusColor();
 
         // revalidate and repaint the table and the panel to refresh the view
         table.revalidate();
         table.repaint();
         panel.revalidate();
         panel.repaint();
+
+        // Call method to change color of all statuses
+        setStatusColor();
+        setDaysLeftColor();
     }
     public void setStatusColor() {
         // Get the TableColumn object for the "Status" column
@@ -225,14 +236,14 @@ public class MyBooks {
                 JLabel cellLabel = new JLabel();
 
                 // Get the value of the "Days left" column for this cell
-                String stringValue = (String) value;
+                String stringValue = Integer.parseInt((String) value) <= 0 ? "0": (String) value;
                 int daysLeft = Integer.parseInt(stringValue);
 
                 // Set the background and foreground color of the cell based on the daysLeft value
-                if (daysLeft == 1) {
+                if (daysLeft <= 1) {
                     cellLabel.setForeground(Color.RED);
                 } else {
-                    cellLabel.setForeground(Color.BLACK);
+                    cellLabel.setForeground(Color.green);
                 }
 
                 // Set the text of the label to the value of the "Days left" column for this cell
@@ -243,6 +254,5 @@ public class MyBooks {
             }
         });
     }
-
 }
 

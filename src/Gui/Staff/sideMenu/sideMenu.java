@@ -216,7 +216,7 @@ public class sideMenu {
                     mainContentPanel.add(homeFrame.homePane);
                 } else if(optionClicked == booksPanel) {
                     Books booksFrame = new Books(mainFrame, uniqueID);
-                    mainContentPanel.add(booksFrame.booksPane);
+                    mainContentPanel.add(booksFrame.booksPane, uniqueID);
             	} else if(optionClicked == customersPanel) {
                     Customer customersFrame = new Customer(mainFrame, uniqueID);
                     mainContentPanel.add(customersFrame.customersPane);
