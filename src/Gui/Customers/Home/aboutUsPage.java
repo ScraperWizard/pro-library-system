@@ -24,6 +24,10 @@ import java.awt.Panel;
 
 public class aboutUsPage {
     public JPanel AboutUsPane;
+    JScrollPane scrollPaneAlALI;
+    JScrollPane scrollPaneYaman;
+    JScrollPane scrollPaneYousef;
+    JScrollPane scrollPaneAhmad;
 
     public aboutUsPage () {
         AboutUsPane = new JPanel();
@@ -69,7 +73,7 @@ public class aboutUsPage {
         AbdulNameLabel.setBounds(0, 11, 206, 37);
         AbdulrahmanPanel.add(AbdulNameLabel);
 
-        JScrollPane scrollPaneAlALI = new JScrollPane();
+        scrollPaneAlALI = new JScrollPane();
         scrollPaneAlALI.setBounds(21, 214, 164, 207);
         AbdulrahmanPanel.add(scrollPaneAlALI);
 
@@ -105,9 +109,7 @@ public class aboutUsPage {
         JLabel YamanPic = new JLabel("");
         YamanPic.setBounds(0, 0, 164, 147);
         YamanPicPanel.add(YamanPic);
-        ImageIcon imageIcon1 = new ImageIcon(getClass().getResource("/Gui/images/YamanPic.png"));
-        YamanPic.setPreferredSize(new Dimension(imageIcon1.getIconWidth(), imageIcon1.getIconHeight()));
-        YamanPic.setIcon(imageIcon1);
+        YamanPic.setIcon(changeIcon(160,160,"/Gui/images/MohYamaPic.jpeg"));
 
 
         JLabel YamanNameLabel = new JLabel("Mohammad Yaman");
@@ -116,7 +118,7 @@ public class aboutUsPage {
         YamanNameLabel.setBounds(0, 11, 206, 37);
         YamanPanel.add(YamanNameLabel);
 
-        JScrollPane scrollPaneYaman = new JScrollPane();
+        scrollPaneYaman = new JScrollPane();
         scrollPaneYaman.setBounds(21, 214, 164, 207);
         YamanPanel.add(scrollPaneYaman);
 
@@ -153,7 +155,7 @@ public class aboutUsPage {
         YousefNameLabel.setBounds(0, 11, 206, 37);
         YousefPanel.add(YousefNameLabel);
 
-        JScrollPane scrollPaneYousef = new JScrollPane();
+        scrollPaneYousef = new JScrollPane();
         scrollPaneYousef.setBounds(21, 214, 164, 207);
         YousefPanel.add(scrollPaneYousef);
 
@@ -188,7 +190,7 @@ public class aboutUsPage {
         AhmadNameLabel.setBounds(0, 11, 206, 37);
         AhmadPanel.add(AhmadNameLabel);
 
-        JScrollPane scrollPaneAhmad = new JScrollPane();
+        scrollPaneAhmad = new JScrollPane();
         scrollPaneAhmad.setBounds(21, 214, 164, 207);
         AhmadPanel.add(scrollPaneAhmad);
 
@@ -210,4 +212,5 @@ public class aboutUsPage {
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         return scaledIcon;
     }
+
 }

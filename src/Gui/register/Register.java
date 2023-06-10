@@ -58,8 +58,13 @@ public class Register {
 
 		// Get screen size
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int screenWidth = (screenSize.width) / 2;
-		int screenHeight = (screenSize.height) / 2;
+		int screenWidth = screenSize.width;
+		int screenHeight = screenSize.height;
+		int frameWidth = 500;
+		int frameHeight = 520;
+		int frameX = (screenWidth - frameWidth) / 2;
+		int frameY = (screenHeight - frameHeight) / 2;
+		mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
 
 		JButton returnButton = new JButton("< Return");
 		returnButton.setForeground(new Color(255, 0, 0));
@@ -77,7 +82,7 @@ public class Register {
 		JPanel registerPanel = new JPanel();
 		registerPanel.setBorder(null);
 		registerPanel.setBackground(new Color(57, 130, 146));
-		registerPanel.setBounds(718, 262, 303, 427);
+		registerPanel.setBounds(91, 34, 303, 427);
 		contentPane.add(registerPanel);
 		registerPanel.setLayout(new GridLayout(0, 1, 0, 0));
 

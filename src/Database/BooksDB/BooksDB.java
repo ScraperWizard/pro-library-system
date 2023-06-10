@@ -10,7 +10,7 @@ import Database.Staff.Staff;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class BooksDB {
+public class BooksDB implements Books {
     final String filePath = "src/Database/BooksDB/Books.json";
     public String author;
     public String book;

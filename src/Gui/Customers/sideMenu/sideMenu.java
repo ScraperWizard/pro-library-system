@@ -63,7 +63,7 @@ public class sideMenu {
         contentPane.add(sideMenuPanel);
 
         // This will open Customer page
-        Home homeFrame = new Home(mainFrame, username);
+        Home homeFrame = new Home(mainFrame, username, mainContentPanel);
         mainContentPanel.add(homeFrame.homePane);
 
         contentPane.add(mainContentPanel);
@@ -219,7 +219,7 @@ public class sideMenu {
 
                 // Add the appropiate panel
                 if (optionClicked == homePanel) {
-                    Home homeFrame = new Home(mainFrame, username);
+                    Home homeFrame = new Home(mainFrame, username, mainContentPanel);
                     mainContentPanel.add(homeFrame.homePane);
                 } else if(optionClicked == myBooksPanel) {
                     MyBooks myBooksFrame = new MyBooks(mainFrame, username);

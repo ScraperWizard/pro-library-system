@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class Logs {
+public class Logs implements Log {
     final String filePath = "src/Database/Logs/logs.json";
     public String action;
     public String by;

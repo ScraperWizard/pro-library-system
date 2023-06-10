@@ -311,7 +311,5 @@ public class CustomerTickets {
 
         return ticketID;
     }
-
-
 }
 

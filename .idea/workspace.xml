@@ -5,32 +5,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da4525ee-2bc9-4861-b29e-f6837df66275" name="Changes" comment="Abdulrahman - Yousef's tasks">
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/ActionButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/CreateCustomTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/ModernScrollBarUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/PanelAction.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/PanelAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/TableActionCellEditor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/TableActionCellRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/TableActionEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/Components/CustomTable/TableDark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Gui/loginSelector/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/20000-Leagues-Under-the-Sea.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/Dolor-and-Shadow.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/Evil-Arises.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/Forever-Warriors.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/Infinity-The-Fifth-Bride-of-Pharaoh.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Adventures-of-Sherlock-Holmes.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Black-Bag.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Legend-Is-Born.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Making-of-a-Matchmaker.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Trials-of-the-Core.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Announcements/Announcement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Announcements/Basic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Announcements/Intermediate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/BooksDB/Advanced.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/BooksDB/Basic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/BooksDB/Books.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/BooksDB/Intermediate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/CustomerTickets/Basic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/CustomerTickets/CustomerSupport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/CustomerTickets/Intermediate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Customers/Advanced.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Customers/Basic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Customers/Customer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Customers/Intermediate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/InvalidPermissionsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Maintenance/Basic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Database/Maintenance/MaintenanceStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Intermediate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Announcements/Announcement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Announcements/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Announcements/Intermediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/BooksDB/Advanced.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/BooksDB/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/BooksDB/Books.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/BooksDB/Intermediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/Intermediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Customers/Advanced.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Customers/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Customers/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Customers/Intermediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Info.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/InvalidPermissionsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Logs/Intermediate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Logs/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Maintenance/Basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Maintenance/MaintenanceStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/Staff/Settings/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/AhmadPic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/Lamba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/MohYamaPic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/OurPic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/TeamPicture.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/Yaman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/YamanPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/YousefID.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/YousefPic.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/Youseff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Gui/images/cuteCow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/2-B-R-O-2-B.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/A-Connecticut-Yankee-in-King-Arthur's-Court.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/A-Princess-of-Mars.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Abandoned.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Accidental-Death.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Advanced-Chemistry.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/After-a-Few-Words....pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/After-the-Cure.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Agent-to-the-Stars.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Alien-Cradle.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Almuric.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/And-That's-How-It-Was-Officer.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/At-the-Earth's-Core.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Binary.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Blindsight.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Brain-Twister.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Citadel.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/For-the-Win.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/From-the-Earth-to-the-Moon.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Hellhounds-of-the-Cosmos.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Human-Error.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Living-History.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/No-Promises.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Aliens.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Chessmen-of-Mars.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Gods-of-Mars.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Hell-Ship.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Invisible-Man.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Island-of-Doctor-Moreau.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Strange-Case-of-Dr.-Jekyll-and-Mr.-Hyde.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/The-Whisperer-in-the-Darkness.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Warlord-of-Mars.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PDFs/Youth.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Database/Announcements/Announcements.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Announcements/Announcements.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Database/BooksDB/BooksDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/BooksDB/BooksDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Database/CustomerTickets/CustomerTickets.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/CustomerTickets/CustomerTickets.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Database/Customers/Customers.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Customers/Customers.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Database/Maintenance/Maintenance.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Maintenance/Maintenance.class" afterDir="false" />
@@ -38,17 +101,23 @@
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Login/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/Login/gui.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/Main/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/Main/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/gui.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/loginSelector/loginSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/register/Register.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/register/gui.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/gui.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Gui/staffLogin/staffLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logs.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Logs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PDFs/cs103x-notes.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PdfOpener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/BooksDB/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/BooksDB/Books.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/CustomerTickets/CustomerTickets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Database/Customers/Customers.json" afterDir="false" />
@@ -56,44 +125,38 @@
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/Home.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/aboutUsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/Home/aboutUsPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ExtendDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/MyBooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/MyBooks/ReturnBooks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Customers/sideMenu/sideMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Login/Login.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/Books$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/Books$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/Books.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/viewBook$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Books/viewBook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/sideMenu/sideMenu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/loginSelector/loginSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/loginSelector/loginSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/PDFs/cs103x-notes.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/PdfOpener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/Staff/Customers/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library-System-OOP/Gui/register/Register.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/BooksDB/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/BooksDB/Books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/BooksDB/BooksDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/BooksDB/BooksDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/CustomerTickets/CustomerTickets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/Customers/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Customers/Customers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Database/Customers/Customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Customers/Customers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/Logs/Logs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Logs/Logs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Components/CustomTable/ActionButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Components/CustomTable/ModernScrollBarUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Components/CustomTable/TableDark.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/Home/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Customers/Home/aboutUsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/Home/aboutUsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/ExtendDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/ExtendDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/MyBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/MyBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/ReturnBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/MyBooks/ReturnBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Customers/sideMenu/sideMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Books/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Books/Books.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Books/viewBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Books/readBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/sideMenu/sideMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/sideMenu/sideMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/loginSelector/gui.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/loginSelector/loginSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PDFs/cs103x-notes.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PdfOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PDFs/PdfOpener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Login/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Login/gui.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Staff/Customers/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Staff/Customers/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/loginSelector/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Database/Info.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/register/gui.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/staffLogin/gui.form" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +166,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -136,31 +200,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/abdulrahmananas/git/pro-library-system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/abdulrahmananas/git/pro-library-system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Database/Announcements" />
@@ -202,7 +266,8 @@
       <workItem from="1684816682911" duration="52251000" />
       <workItem from="1685351188982" duration="18101000" />
       <workItem from="1685947852720" duration="4201000" />
-      <workItem from="1686026435267" duration="5383000" />
+      <workItem from="1686026435267" duration="6858000" />
+      <workItem from="1686123176343" duration="14804000" />
     </task>
     <task id="LOCAL-00001" summary="make it better">
       <created>1682701518613</created>
@@ -337,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685423896608</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Abdulrahman - Yousef's tasks">
+      <created>1686032552935</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686032552935</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

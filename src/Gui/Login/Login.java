@@ -3,6 +3,8 @@ package Gui.Login;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
+
+import Database.CustomerTickets.CustomerTickets;
 import Database.Customers.Customers;
 import Database.Maintenance.Maintenance;
 import Gui.Customers.sideMenu.sideMenu;
@@ -28,14 +30,14 @@ public class Login {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(new Color(57, 130, 146));
 
-        // Get screen size
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
-        int frameWidth = 500;
-        int frameHeight = 520;
-        int frameX = (screenWidth - frameWidth) / 2;
-        int frameY = (screenHeight - frameHeight) / 2;
+		// Get screen size
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int screenWidth = screenSize.width;
+		int screenHeight = screenSize.height;
+		int frameWidth = 500;
+		int frameHeight = 520;
+		int frameX = (screenWidth - frameWidth) / 2;
+		int frameY = (screenHeight - frameHeight) / 2;
 		mainFrame.setBounds(frameWidth, frameY, frameWidth, frameHeight);
 
 		MouseAdapter panelMouseEventHandler = new MouseAdapter() {
@@ -60,6 +62,7 @@ public class Login {
 				event.getComponent().setCursor(Cursor.getDefaultCursor());
 			}
 		};
+
 		contentPane.setLayout(null);
 
 		JButton returnButton = new JButton("< Return");
@@ -134,10 +137,54 @@ public class Login {
 		contentPane.add(loginPanel);
 		registerNowLbl.addMouseListener(panelMouseEventHandler);
 
+		MouseAdapter SpanelMouseEventHandler = new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				contentPane.setVisible(true);
+				CustomerTickets sendTicket = new CustomerTickets();
+				Customers customer = new Customers();
+				String username = usernameInput.getText().trim(); // Trim leading and trailing spaces
+
+				if (username.isEmpty()) {
+					JOptionPane.showMessageDialog(contentPane, "Bro, at least enter your username");
+				} else {
+					Customers currentUser = customer.getUser(username);
+					if (currentUser == null) {
+						JOptionPane.showMessageDialog(contentPane, "Bro, enter a valid username");
+					} else {
+						try {
+							String ticketID = sendTicket.addTicket(currentUser.email, "staff", "Forgot password");
+							sendTicket.addMessageToTicket(ticketID, "null", "Forgot my password");
+							JOptionPane.showMessageDialog(contentPane, "Your request has been sent");
+						} catch (Exception e1) {
+							e1.printStackTrace();
+							JOptionPane.showMessageDialog(contentPane, "An error occurred while processing your request");
+						}
+					}
+				}
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent event) {
+				// handle mouse enter event
+				event.getComponent().setForeground(Color.BLUE);
+				event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			}
+
+			@Override
+			public void mouseExited(MouseEvent event) {
+				// handle mouse exit event
+				event.getComponent().setForeground(Color.WHITE);
+				event.getComponent().setCursor(Cursor.getDefaultCursor());
+			}
+		};
+		forgotPasswordLbl.addMouseListener(SpanelMouseEventHandler);
+
 		customerLoginButton.addActionListener(clickEvent -> {
 			// Get username and password
 			String username = usernameInput.getText();
 			String password = passwordInput.getText();
+
 			boolean validLogin = false;
 			String isMaintenance = globalMaintenanceObject.getStatus();
 
@@ -148,7 +195,7 @@ public class Login {
 					inValidateLogin(validLogin, "Service is under maintenance! Come back later", "null", "Maintenance mode");
 				} else {
 					contentPane.setVisible(false);
-					sideMenu customerService = new sideMenu(mainFrame, username);
+					sideMenu customerService = new sideMenu(mainFrame ,username);
 					mainFrame.setContentPane(customerService.contentPane);
 				}
 			} else {

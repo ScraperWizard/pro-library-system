@@ -41,7 +41,7 @@ public class Customer {
         Object[][] data = getTable(globalCustomerObject);
         
         JScrollPane scrollPane_1 = new JScrollPane();
-        scrollPane_1.setBounds(200, 93, 710, data[0].length * 30);
+        scrollPane_1.setBounds(200, 93, 710, data.length * 17);
         customersPane.add(scrollPane_1);
         
         table_2 = new JTable(data, columnNames);
@@ -92,7 +92,7 @@ public class Customer {
         });
         
         refreshButton.addActionListener(clickEvent -> {
-        	refreshTable(table_2, customersPane, globalCustomerObject);
+        	refreshTable(table_2, customersPane, globalCustomerObject, scrollPane_1);
             System.out.print("Refreshed");
         });
         
@@ -132,13 +132,14 @@ public class Customer {
         return data;
     }
     
-    public void refreshTable(JTable table, JPanel panel, Customers globalCustomerObject) {
+    public void refreshTable(JTable table, JPanel panel, Customers globalCustomerObject, JScrollPane scrollPanel) {
         // get the updated data for the table
         Object[][] data = getTable(globalCustomerObject);
         
         // create a new table model with the updated data
         DefaultTableModel newTableModel = new DefaultTableModel(data, new Object[] {"Name", "Email", "Contact Number"});
         table.setModel(newTableModel);
+        scrollPanel.setBounds(200, 93, 710, data.length * 17);
 
         // revalidate and repaint the table and the panel to refresh the view
         table.revalidate();

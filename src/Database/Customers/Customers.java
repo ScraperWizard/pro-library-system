@@ -5,6 +5,7 @@ import java.io.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
+// This class has the highest level of permissions
 public class Customers {
     final String filePath = "src/Database/Customers/Customers.json";
     public String username;

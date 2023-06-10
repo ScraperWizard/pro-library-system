@@ -21,9 +21,9 @@
         "note": "N\/A",
         "author": "Alexey Osadchuk",
         "book": "Evil Arises",
-        "borrowedBy": "Sarah Smith",
+        "borrowedBy": "yousef",
         "genre": "Fantasy",
-        "borrowDate": "2023-05-18",
+        "borrowDate": "",
         "status": "SOLD"
     },
     {
@@ -32,8 +32,8 @@
         "book": "Forever Warriors",
         "borrowedBy": "yousef",
         "genre": "Fantasy",
-        "borrowDate": "2023-06-05",
-        "status": "BORROWED"
+        "borrowDate": "",
+        "status": "SOLD"
     },
     {
         "note": "N\/A",
@@ -77,16 +77,70 @@
         "book": "The Making of a Matchmaker",
         "borrowedBy": "Olivia Wilson",
         "genre": "Romance",
-        "borrowDate": "2023-05-10",
+        "borrowDate": "",
         "status": "SOLD"
     },
     {
         "note": "N\/A",
         "author": "Michael Wisehart",
         "book": "The Trials of the Core",
-        "borrowedBy": "Daniel Johnson",
+        "borrowedBy": "",
         "genre": "Fantasy",
-        "borrowDate": "2023-05-19",
+        "borrowDate": "",
+        "status": "AVAILABLE"
+    },
+    {
+        "note": "An intriguing tale of invisibility and its consequences.",
+        "author": "H.G. Wells",
+        "book": "The Invisible Man",
+        "borrowedBy": "Ali",
+        "genre": "Science Fiction",
+        "borrowDate": "",
+        "status": "SOLD"
+    },
+    {
+        "note": "A thrilling adventure on the red planet.",
+        "author": "Edgar Rice Burroughs",
+        "book": "A Princess of Mars",
+        "borrowedBy": "Ali",
+        "genre": "Science Fiction",
+        "borrowDate": "2023-06-01",
+        "status": "BORROWED"
+    },
+    {
+        "note": "An entertaining story about a talent agent and alien encounters.",
+        "author": "John Scalzi",
+        "book": "Agent to the Stars",
+        "borrowedBy": "Yousef",
+        "genre": "Science Fiction",
+        "borrowDate": "2023-06-02",
+        "status": "BORROWED"
+    },
+    {
+        "note": "A post-apocalyptic tale of survival and a quest for a cure.",
+        "author": "Deirdre Gould",
+        "book": "After the Cure",
+        "borrowedBy": "",
+        "genre": "Science Fiction",
+        "borrowDate": "",
+        "status": "AVAILABLE"
+    },
+    {
+        "note": "A classic story of the dual nature of man.",
+        "author": "Robert Louis Stevenson",
+        "book": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+        "borrowedBy": "Yara",
+        "genre": "Horror",
+        "borrowDate": "2023-06-03",
+        "status": "BORROWED"
+    },
+    {
+        "note": "A mind-bending exploration of first contact with aliens.",
+        "author": "Peter Watts",
+        "book": "Blindsight",
+        "borrowedBy": "",
+        "genre": "Science Fiction",
+        "borrowDate": "",
         "status": "AVAILABLE"
     }
 ]

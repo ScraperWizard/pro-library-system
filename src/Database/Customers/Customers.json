@@ -1,1 +1,110 @@
-[{"password":"test","contact":"971567361512","email":"22000711@gmail.com","username":"yousef"},{"password":"wwe12","contact":"971567365856","email":"282729827@gmail.com","username":"yaman"}]
+[
+    {
+        "password": "test",
+        "contact": "971567361512",
+        "email": "yousef@ug.buid.ac.ae",
+        "username": "yousef"
+    },
+    {
+        "password": "wwe12",
+        "contact": "971567365856",
+        "email": "yaman@ug.buid.ac.ae",
+        "username": "Yaman"
+    },
+    {
+        "password": "pass123",
+        "contact": "971567366456",
+        "email": "ahmed123@ug.buid.ac.ae",
+        "username": "Ahmed"
+    },
+    {
+        "password": "abc123",
+        "contact": "971567369999",
+        "email": "khaled55@ug.buid.ac.ae",
+        "username": "Khaled"
+    },
+    {
+        "password": "p@ssword",
+        "contact": "971567362355",
+        "email": "sara123@ug.buid.ac.ae",
+        "username": "Sara"
+    },
+    {
+        "password": "qwerty",
+        "contact": "971567364591",
+        "email": "mohamed444@ug.buid.ac.ae",
+        "username": "Mohamed"
+    },
+    {
+        "password": "secret12",
+        "contact": "971567363000",
+        "email": "nora55@ug.buid.ac.ae",
+        "username": "Nora"
+    },
+    {
+        "password": "123456",
+        "contact": "971567365489",
+        "email": "ali777@ug.buid.ac.ae",
+        "username": "Ali"
+    },
+    {
+        "password": "pass321",
+        "contact": "971567368966",
+        "email": "marwa55@ug.buid.ac.ae",
+        "username": "Marwa"
+    },
+    {
+        "password": "password123",
+        "contact": "971567366222",
+        "email": "saleh22@ug.buid.ac.ae",
+        "username": "Saleh"
+    },
+    {
+        "password": "test123",
+        "contact": "971567364448",
+        "email": "fatima66@ug.buid.ac.ae",
+        "username": "Fatima"
+    },
+    {
+        "password": "pass1234",
+        "contact": "971567363333",
+        "email": "reema55@ug.buid.ac.ae",
+        "username": "Reema"
+    },
+    {
+        "password": "abc1234",
+        "contact": "971567366781",
+        "email": "abdullah44@ug.buid.ac.ae",
+        "username": "Abdullah"
+    },
+    {
+        "password": "password1",
+        "contact": "971567365982",
+        "email": "layla111@ug.buid.ac.ae",
+        "username": "Layla"
+    },
+    {
+        "password": "pass456",
+        "contact": "971567369444",
+        "email": "yara555@ug.buid.ac.ae",
+        "username": "Yara"
+    },
+    {
+        "password": "qwerty123",
+        "contact": "971567362881",
+        "email": "khalid333@ug.buid.ac.ae",
+        "username": "Khalid"
+    },
+    {
+        "password": "test456",
+        "contact": "971567363111",
+        "email": "maha22@ug.buid.ac.ae",
+        "username": "Maha"
+    },
+    {
+        "password": "pass789",
+        "contact": "971567365100",
+        "email": "adam99@ug.buid.ac.ae",
+        "username": "Adam"
+    }
+]
